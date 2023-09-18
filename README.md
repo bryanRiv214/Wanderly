@@ -1,6 +1,7 @@
 # Project: Wanderly
 
 Wanderly is an innovative app that suggests exciting activities for you every single day, rain or shine.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Development: Ongoing
