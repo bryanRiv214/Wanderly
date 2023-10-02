@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Header from './components/Header';
+import Homepage from './Homepage';
+import PageNotFound from './routes/PageNotFound';
+import Footer from './components/Footer';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Header />
+      <Routes>
+          <Route index element={<Homepage userName="Bryan" location="New York City"/>} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      <Footer />
+    </BrowserRouter>
+
+    
   </React.StrictMode>
 );
 

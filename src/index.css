@@ -1,13 +1,201 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+  /* Replace font */
+  font-family: "Montserrat", sans-serif;;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Style Header */
+.Header {
+  background-color: rgb(172, 178, 152);
+  width: 100vw;
+  height: fit-content;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-between;
+}
+
+.website-title-container {
+  width: 15vw;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background-color: gainsboro;
+  margin: 1vh 3vh;
+  cursor: pointer;
+}
+
+.wanderly-title {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.navbar-links-container {
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  margin-right: 8vw;
+}
+
+.navbar-links-list {
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* Styling Homepage */
+.good-morning-msg {
+  margin: 5vh 0;
+}
+
+.Homepage {
+  background-color: rgb(250, 240, 228);
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.location-info-container {
+  background-color: gainsboro;
+  height: 60vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 5vh;
+}
+
+.todays-forecast-container {
+  width: 90%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-evenly;
+}
+
+.weather-img-container {
+  height: 70%;
+  width: 14vw;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: space-evenly;
+}
+
+.weather-img {
+  width: 90%;
+  height: 60%;
+  text-align: center;
+  font-size: 98px;
+}
+
+.WeatherInfoTable {
+  height: 90%;
+  width: 65%;
+  text-align: center;
+}
+
+/* Styling ActivitiesTable */
+.ActivitiesTable {
+  width: 95%;
+  height: fit-content;
+  border-spacing: 1vw;
+  margin-top: 5vh;
+}
+
+.ActivityCard {
+  position: relative;
+  width: auto;
+  margin: 2vh;
+  cursor: pointer;
+}
+
+.activity-content {
+  width: 70%;
+  margin: auto;
+  aspect-ratio: 1 / 1; /*To make the cells in table square */
+  background: gainsboro;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+
+/* Styling arrow img on Homepage */
+.arrow-down-img {
+  height: 5vh;
+  margin: 4vh 0;
+  cursor: pointer;
+}
+
+/* Style Footer */
+.Footer {
+  background-color: rgb(172, 178, 152);
+  width: 100vw;
+  height: 18vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1vh 0;
+}
+
+.footer-row-container {
+  height: fit-content;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-between;
+  place-self: center;
+  line-height: 4vh;
+}
+
+.slogan {
+  width: fit-content;
+  height: fit-content;
+}
+
+.wanderly-beige {
+  color: rgb(250, 240, 228);
+}
+
+.social-media-icons-container {
+  height: fit-content;
+  width: 25vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  place-items: center;
+}
+
+.social-media-icon {
+  height: 4vh;
+  cursor: pointer;
+}
+
+.terms-and-privacy-container {
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.terms-and-privacy-container p{
+  cursor: pointer;
 }
