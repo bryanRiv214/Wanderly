@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import CreatePostForm from '../components/CreatePostForm';
 
-function ProfilePage() {
+function CreatePostForm() {
     return (
         <div>
-            <CreatePostForm/>
+            <form>
+                
+            </form>
+            <p>Hello</p>
         </div>
     );
 }

@@ -4,6 +4,7 @@ import './index.css';
 import Header from './components/Header';
 import Homepage from './Homepage';
 import PageNotFound from './routes/PageNotFound';
+import ProfilePage from './routes/ProfilePage';
 import Footer from './components/Footer';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -16,6 +17,7 @@ root.render(
       <Routes>
           <Route index element={<Homepage userName="Bryan" location="New York City"/>} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="profile" element={<ProfilePage/>} />
         </Routes>
       <Footer />
     </BrowserRouter>
