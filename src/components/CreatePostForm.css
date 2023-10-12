@@ -1,0 +1,52 @@
+form {
+    text-align: center;
+    padding: 50px 100px 50px;
+    border: solid 1px black;
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: column;
+}
+
+.ActivitySection, .DescriptionSection,
+    .WeatherSection, .TimeSection, .LocationSection,
+        .PriceSection, .ActivityTypeSection
+            {
+                display: flex;
+                flex-direction: row;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea, select,
+.ActivitySection
+    .DescriptionSection
+        .LocationSection
+            {
+    margin-left: 10px;
+}
+
+input, textarea,
+.ActivitySection
+    .DescriptionSection
+            {
+    flex-basis: 75%;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.WeatherSection, .TimeSection,
+    .PriceSection, .ActivityTypeSection,
+        input {
+    margin-right: 5px;
+}
+
+.SubmitButton {
+    width: fit-content;
+    border: solid 1px black;
+    background-color: rgb(167, 164, 164);
+}
