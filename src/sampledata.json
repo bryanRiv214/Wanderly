@@ -1,0 +1,86 @@
+{
+    "Userinfo":{
+        "userid": "1",
+        "user_name": "John Smith",
+        "firstname": "John",
+        "lastname": "Smith",
+        "email": "john.smith@example.com",
+        "password": "Password123@",
+        "location": "New York City",
+        "interests":["hiking","sight seeing"]
+    },
+    "posts": [
+    {
+        "post_id": 1,
+        "title":"Walk In the Park",
+        "text": "Today I checked out central park! I walked through some of my favorite areas like Bethseda Terrace and The Great Lawn!",
+        "timestamp": "2023-10-10T14:30:00",
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cntraveler.com%2Factivities%2Fnew-york%2Fcentral-park&psig=AOvVaw29_ry9dhXSO-m1xwqk8548&ust=1697061941092000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCIiFwcS-7IEDFQAAAAAdAAAAABAD",
+        "tags": ["outdoor", "walking" , "nature"],
+        "weather": "sunny",
+        "activity_type": "walking",
+        "location": "Central Park",
+        "price": 0
+    },
+    {
+        "post_id": 2,
+        "title": "An NYC Must Try",
+        "text": "Today I checked out this NYC staple, Katz Deli. Ordered the Ruben that tasted amazing!",
+        "timestamp": "2023-10-09T19:45:00",
+        "image": "https://res.cloudinary.com/the-infatuation/image/upload/c_fill,w_828,ar_4:3,g_center,f_auto/cms/media/reviews/katzs-deli/banners/Theophilus-_252B-Katzs-019_0",
+        "tags": ["indoor", "food"],
+        "weather": "any",
+        "activity_type": "food",
+        "location": "Katz Deli",
+        "price": 2
+    },
+    {
+        "post_id": 3,
+        "title":"Walk In the Park",
+        "text": "Today I checked out central park! I walked through some of my favorite areas like Bethseda Terrace and The Great Lawn!",
+        "timestamp": "2023-10-10T14:30:00",
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cntraveler.com%2Factivities%2Fnew-york%2Fcentral-park&psig=AOvVaw29_ry9dhXSO-m1xwqk8548&ust=1697061941092000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCIiFwcS-7IEDFQAAAAAdAAAAABAD",
+        "tags": ["outdoor", "walking" , "nature"],
+        "weather": "sunny",
+        "activity_type": "walking",
+        "location": "Central Park",
+        "price": 0
+    },
+    {
+        "post_id": 4,
+        "title": "An NYC Must Try",
+        "text": "Today I checked out this NYC staple, Katz Deli. Ordered the Ruben that tasted amazing!",
+        "timestamp": "2023-10-09T19:45:00",
+        "image": "https://res.cloudinary.com/the-infatuation/image/upload/c_fill,w_828,ar_4:3,g_center,f_auto/cms/media/reviews/katzs-deli/banners/Theophilus-_252B-Katzs-019_0",
+        "tags": ["indoor", "food"],
+        "weather": "any",
+        "activity_type": "food",
+        "location": "Katz Deli",
+        "price": 2
+    },
+    {
+        "post_id": 5,
+        "title":"Walk In the Park",
+        "text": "Today I checked out central park! I walked through some of my favorite areas like Bethseda Terrace and The Great Lawn!",
+        "timestamp": "2023-10-10T14:30:00",
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cntraveler.com%2Factivities%2Fnew-york%2Fcentral-park&psig=AOvVaw29_ry9dhXSO-m1xwqk8548&ust=1697061941092000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCIiFwcS-7IEDFQAAAAAdAAAAABAD",
+        "tags": ["outdoor", "walking" , "nature"],
+        "weather": "sunny",
+        "activity_type": "walking",
+        "location": "Central Park",
+        "price": 0
+    },
+    {
+        "post_id": 6,
+        "title": "An NYC Must Try",
+        "text": "Today I checked out this NYC staple, Katz Deli. Ordered the Ruben that tasted amazing!",
+        "timestamp": "2023-10-09T19:45:00",
+        "image": "https://res.cloudinary.com/the-infatuation/image/upload/c_fill,w_828,ar_4:3,g_center,f_auto/cms/media/reviews/katzs-deli/banners/Theophilus-_252B-Katzs-019_0",
+        "tags": ["indoor", "food"],
+        "weather": "any",
+        "activity_type": "food",
+        "location": "Katz Deli",
+        "price": 2
+    }   
+    ]
+  }

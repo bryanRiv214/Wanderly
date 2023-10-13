@@ -15,7 +15,7 @@ const Header = () => {
                 {/* Paste links to other pages when we are done creating them */}
                 {/* They have to match the paths. See index.js */}
                 <Link to='/' className="navbar-link">Home</Link>
-                <Link to='/' className="navbar-link">Map</Link>
+                <Link to='/map' className="navbar-link">Map</Link>
                 <Link to='/' className="navbar-link">Profile</Link>
             </ul>
         </div>
