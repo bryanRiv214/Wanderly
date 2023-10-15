@@ -1,8 +1,8 @@
 #weather-panel {
     margin-top: 2vh;
     margin-bottom: 3vh;
-    border: 0.3vw solid black;
-    color: #ffc008;
+    border: 0.3vw solid #3d3c3e;
+    color: #5b585e;
     width:70vw;
 }
 
@@ -11,10 +11,8 @@
     justify-content: center;
 }
 
-#weather-panel,
-h2,
-h3 {
-    background-color: rgb(64, 63, 63);
+#weather-panel{
+    background-color: #d8d9d8;
 }
 
 #weather-container {

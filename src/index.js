@@ -14,7 +14,7 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
-          <Route index element={<Homepage userName="Bryan" location="New York City"/>} />
+          <Route index element={<Homepage userName="Bryan"/>} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       <Footer />

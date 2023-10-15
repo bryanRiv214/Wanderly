@@ -58,7 +58,9 @@ a {
 
 /* Styling Homepage */
 .good-morning-msg {
-  margin: 5vh 0;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  font-size: 3vh;
 }
 
 .Homepage {
