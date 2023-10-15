@@ -1,11 +1,15 @@
 import ActivitiesTable from "./components/ActivitiesTable";
 import WeatherInfoTable from "./components/WeatherInfoTable";
+import SearchBar from "./components/SearchBar";
+import "./styles/Homepage.css";
 
 // Starting page
 const Homepage = ({userName, location}) => {
   return (
     <div className="Homepage">
       <h1 className="good-morning-msg">Good Morning, {userName}</h1>
+
+      <SearchBar />
 
       <div className="location-info-container">
         <h2 className="location-name">{location}</h2>
