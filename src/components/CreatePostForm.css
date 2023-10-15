@@ -1,5 +1,4 @@
 form {
-    text-align: center;
     padding: 50px 100px 50px;
     border: solid 1px black;
     background-color: rgb(224, 224, 224);
@@ -8,30 +7,41 @@ form {
 }
 
 .ActivitySection, .DescriptionSection,
-    .WeatherSection, .TimeSection, .LocationSection,
+    .WeatherSection, .DurationSection, .LocationSection,
         .PriceSection, .ActivityTypeSection
             {
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 label {
     font-weight: bold;
 }
 
-input, textarea, select,
-.ActivitySection
-    .DescriptionSection
-        .LocationSection
+input, textarea, select
             {
     margin-left: 10px;
 }
 
-input, textarea,
-.ActivitySection
-    .DescriptionSection
+.ActivitySection input, textarea
             {
     flex-basis: 75%;
+}
+
+.PriceSection input {
+    margin-left: 3px;
+    width: 40px;
+}
+
+.DurationSection input {
+    width: 30px;
 }
 
 textarea {
@@ -39,8 +49,7 @@ textarea {
     resize: none;
 }
 
-.WeatherSection, .TimeSection,
-    .PriceSection, .ActivityTypeSection,
+.WeatherSection, .DurationSection, .ActivityTypeSection,
         input {
     margin-right: 5px;
 }
