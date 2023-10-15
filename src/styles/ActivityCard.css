@@ -1,0 +1,16 @@
+.ActivityCard {
+  position: relative;
+  width: auto;
+  margin: 2vh;
+  cursor: pointer;
+}
+
+.activity-content {
+  width: 70%;
+  margin: auto;
+  aspect-ratio: 1 / 1; /*To make the cells in table square */
+  background: gainsboro;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}

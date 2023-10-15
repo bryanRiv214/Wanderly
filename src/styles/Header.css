@@ -1,0 +1,50 @@
+/* Style Header */
+.Header {
+  background-color: rgb(172, 178, 152);
+  width: 100vw;
+  height: fit-content;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-between;
+}
+
+.website-title-container {
+  width: 15vw;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background-color: gainsboro;
+  margin: 1vh 3vh;
+  cursor: pointer;
+}
+
+.wanderly-title {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.navbar-links-container {
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  margin-right: 8vw;
+}
+
+.navbar-links-list {
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

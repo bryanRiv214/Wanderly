@@ -1,3 +1,5 @@
+import "../styles/ActivityCard.css";
+
 const ActivityCard = () => {
     return (
         <td className="ActivityCard">
