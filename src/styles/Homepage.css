@@ -1,0 +1,56 @@
+/* Styling Homepage */
+.good-morning-msg {
+  margin: 5vh 0;
+}
+
+.Homepage {
+  background-color: rgb(250, 240, 228);
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.location-info-container {
+  background-color: gainsboro;
+  height: 60vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 5vh;
+}
+
+.todays-forecast-container {
+  width: 90%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-evenly;
+}
+
+.weather-img-container {
+  height: 70%;
+  width: 14vw;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: space-evenly;
+}
+
+.weather-img {
+  width: 90%;
+  height: 60%;
+  text-align: center;
+  font-size: 98px;
+}
+
+/* Styling arrow img on Homepage */
+.arrow-down-img {
+  height: 5vh;
+  margin: 4vh 0;
+  cursor: pointer;
+}

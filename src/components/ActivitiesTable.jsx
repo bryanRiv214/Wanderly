@@ -1,51 +1,54 @@
 import ActivityCard from "./ActivityCard";
+import "../styles/ActivitiesTable.css";
 
 const ActivitiesTable = () => {
     return (
         <table className="ActivitiesTable">
-            {/* First row */}
-            <tr>
-                <ActivityCard />
+            <tbody>
+                {/* First row */}
+                <tr>
+                    <ActivityCard />
 
-                <ActivityCard />
+                    <ActivityCard />
 
-                <ActivityCard />
+                    <ActivityCard />
 
-                <ActivityCard />
-            </tr>
+                    <ActivityCard />
+                </tr>
 
-            {/* Second row */}
-            <tr>
-                <ActivityCard />
+                {/* Second row */}
+                <tr>
+                    <ActivityCard />
 
-                <ActivityCard />
+                    <ActivityCard />
 
-                <ActivityCard />
+                    <ActivityCard />
 
-                <ActivityCard />
-            </tr>
+                    <ActivityCard />
+                </tr>
 
-            {/* Third row */}
-            <tr>
-                <ActivityCard />
+                {/* Third row */}
+                <tr>
+                    <ActivityCard />
 
-                <ActivityCard />
+                    <ActivityCard />
 
-                <ActivityCard />
+                    <ActivityCard />
 
-                <ActivityCard />
-            </tr>
+                    <ActivityCard />
+                </tr>
 
-            {/* Fourth row */}
-            <tr>
-                <ActivityCard />
+                {/* Fourth row */}
+                <tr>
+                    <ActivityCard />
 
-                <ActivityCard />
+                    <ActivityCard />
 
-                <ActivityCard />
+                    <ActivityCard />
 
-                <ActivityCard />
-            </tr>
+                    <ActivityCard />
+                </tr>
+            </tbody>
         </table>
     )
 }
