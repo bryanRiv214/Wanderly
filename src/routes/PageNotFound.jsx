@@ -1,3 +1,5 @@
+import "../styles/PageNotFound.css";
+
 // This component will contain info that we will show users if they access
 // out website but with wrong link
 const PageNotFound = () => {

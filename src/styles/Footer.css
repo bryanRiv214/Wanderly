@@ -1,0 +1,55 @@
+/* Style Footer */
+.Footer {
+  background-color: rgb(172, 178, 152);
+  width: 100vw;
+  height: 18vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1vh 0;
+}
+
+.footer-row-container {
+  height: fit-content;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-between;
+  place-self: center;
+  line-height: 4vh;
+}
+
+.slogan {
+  width: fit-content;
+  height: fit-content;
+}
+
+.wanderly-beige {
+  color: rgb(250, 240, 228);
+}
+
+.social-media-icons-container {
+  height: fit-content;
+  width: 25vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  place-items: center;
+}
+
+.social-media-icon {
+  height: 4vh;
+  cursor: pointer;
+}
+
+.terms-and-privacy-container {
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.terms-and-privacy-container p{
+  cursor: pointer;
+}
