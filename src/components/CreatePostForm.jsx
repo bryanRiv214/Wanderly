@@ -73,9 +73,9 @@ function CreatePostForm() {
         return true;
     }
 
-
     return (
         <div>
+            <div className='tab'>Create Post</div>
             <form className='newPostForm' name='newPost' onSubmit={handleSubmit}>
                 <div className='ActivitySection'>
                     <label>Activity:</label>
