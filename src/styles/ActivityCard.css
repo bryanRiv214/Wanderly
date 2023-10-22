@@ -1,15 +1,16 @@
 .ActivityCard {
   position: relative;
-  width: auto;
-  margin: 1vh;
+  width: 80%;
+  margin: auto;
   cursor: pointer;
+  margin-bottom: 3vh;
 }
 
 .activity-content {
   width: 70%;
   margin: auto;
   padding: 2vh;
-  aspect-ratio: 1 / 1; /*To make the cells in table square */
+  aspect-ratio: 1 / 1; /* To make the cells in table square */
   background: gainsboro;
   display: flex;
   flex-direction: column;
@@ -42,4 +43,21 @@
   width: fit-content;
   display: inline-block;
   margin: 0 5px;
+}
+
+.open-post-btn {
+  width: 15vw;
+  height: 5vh;
+  border-radius: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.open-post-btn:hover {
+  transform: scale(1.1);
+}
+
+.open-post-btn:active {
+  transform: scale(1);
+  background-color: rgb(234, 236, 239);
 }

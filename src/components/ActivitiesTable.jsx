@@ -22,7 +22,6 @@ const ActivitiesTable = () => {
         })
         .then(function(data) {
             setListOfPosts(data.posts);
-            console.log(data.posts)
         });
     }
 
@@ -31,12 +30,8 @@ const ActivitiesTable = () => {
             {listOfPosts? 
                 listOfPosts.map(post => 
                 <ActivityCard 
-                key={post.post_id} 
-                title={post.title}
-                location={post.location}
-                imageURL={post.image}
-                weather={post.weather} 
-                tags={post.tags}
+                    key={post.post_id}
+                    post={post}
                 />)
             : ""
             }
