@@ -10,18 +10,10 @@ const ActivitiesTable = () => {
                     <ActivityCard />
 
                     <ActivityCard />
-
-                    <ActivityCard />
-
-                    <ActivityCard />
                 </tr>
 
                 {/* Second row */}
                 <tr>
-                    <ActivityCard />
-
-                    <ActivityCard />
-
                     <ActivityCard />
 
                     <ActivityCard />
@@ -32,18 +24,10 @@ const ActivitiesTable = () => {
                     <ActivityCard />
 
                     <ActivityCard />
-
-                    <ActivityCard />
-
-                    <ActivityCard />
                 </tr>
 
                 {/* Fourth row */}
                 <tr>
-                    <ActivityCard />
-
-                    <ActivityCard />
-
                     <ActivityCard />
 
                     <ActivityCard />
