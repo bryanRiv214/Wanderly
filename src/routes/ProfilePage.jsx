@@ -13,7 +13,7 @@ function ProfilePage() {
     return (
         <div className='page'>
             <div className='left-pane'>
-                <img className='profile-pic' src='profile.svg' alt='profile logo'></img>
+                <img className='profile-pic' src='profileicon.svg' alt='profile logo'></img>
                 <button className='button' onClick={handleTabClick}>Edit Profile</button>
                 <button className='button' onClick={handleTabClick}>Create Post</button>
                 <button className='button' onClick={handleTabClick}>My Posts</button>
