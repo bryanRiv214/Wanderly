@@ -79,17 +79,17 @@ function CreatePostForm() {
             <form className='newPostForm' name='newPost' onSubmit={handleSubmit}>
                 <div className='ActivitySection'>
                     <label>Activity:</label>
-                    <input type='text' name='activity' placeholder='Title' value={activity} onChange={handleActivityChange} maxLength='50' autoComplete='off' required></input>
+                    <input className='input' type='text' name='activity' placeholder='Title' value={activity} onChange={handleActivityChange} maxLength='50' autoComplete='off' required></input>
                 </div>
                 <br/>
                 <div className='DescriptionSection'>
                     <label>Description:</label>
-                    <textarea name='description' placeholder='What did you do?' value={description} onChange={handleDescriptionChange} maxLength='1000' required></textarea>
+                    <textarea className='textArea' name='description' placeholder='What did you do?' value={description} onChange={handleDescriptionChange} maxLength='1000' required></textarea>
                 </div>
                 <br/>
                 <div className='LocationSection'>
                     <label>Location:</label>
-                    <select name='location' value={location} onChange={handleLocationChange} required>
+                    <select className='select' name='location' value={location} onChange={handleLocationChange} required>
                         <option value=''>--Select--</option>
                         {locationOptions.map((item, index) => 
                             <option key={index} value={item}>{item}</option>  
@@ -99,14 +99,14 @@ function CreatePostForm() {
                 <br/>
                 <div className='DurationSection'>
                     <label>Duration (hrs):</label>
-                    <input type='text' name='minDuration' placeholder='##' value={minDuration} onChange={handleMinDurationChange} maxLength='2' dir='rtl' autoComplete='off' required></input>
+                    <input className='input' type='text' name='minDuration' placeholder='##' value={minDuration} onChange={handleMinDurationChange} maxLength='2' dir='rtl' autoComplete='off' required></input>
                     <p>-</p>
-                    <input type='text' name='maxDuration' placeholder='##' value={maxDuration} onChange={handleMaxDurationChange} maxLength='2' dir='rtl' autoComplete='off' required></input>
+                    <input className='input' type='text' name='maxDuration' placeholder='##' value={maxDuration} onChange={handleMaxDurationChange} maxLength='2' dir='rtl' autoComplete='off' required></input>
                 </div>
                 <br/>
                 <div className='PriceSection'>
                     <label>Estimated Price: $</label>
-                    <input type='text' name='price' placeholder='###' value={price} onChange={handlePriceChange} maxLength='4' dir='rtl' autoComplete='off' required></input>
+                    <input className='input' type='text' name='price' placeholder='###' value={price} onChange={handlePriceChange} maxLength='4' dir='rtl' autoComplete='off' required></input>
                 </div>
                 <br/> 
                 <div className='WeatherSection'>
@@ -115,7 +115,7 @@ function CreatePostForm() {
                         {weatherOptions.map((item, index) => 
                             <div key={index}>
                                 <label>
-                                    <input type='radio' name='weather' value={item} onChange={handleWeatherChange} checked={weather===item} required></input>
+                                    <input className='input' type='radio' name='weather' value={item} onChange={handleWeatherChange} checked={weather===item} required></input>
                                     {item}
                                 </label>
                             </div>   
@@ -129,7 +129,7 @@ function CreatePostForm() {
                         {activityTypeOptions.map((item, index) => 
                             <div key={index}>
                                 <label>
-                                    <input type='radio' name='type' value={item} onChange={handleTypeChange} checked={type===item} required></input>
+                                    <input className='input' type='radio' name='type' value={item} onChange={handleTypeChange} checked={type===item} required></input>
                                     {item}
                                 </label>
                             </div>   
