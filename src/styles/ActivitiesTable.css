@@ -1,7 +1,6 @@
 /* Styling ActivitiesTable */
-.ActivitiesTable {
-    width: 95%;
+.ActivitiesContainer {
+    width: 100%;
     height: fit-content;
-    border-spacing: 1vw;
     margin-top: 5vh;
 }

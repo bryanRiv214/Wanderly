@@ -1,16 +1,63 @@
 .ActivityCard {
   position: relative;
-  width: auto;
-  margin: 2vh;
+  width: 80%;
+  margin: auto;
   cursor: pointer;
+  margin-bottom: 3vh;
 }
 
 .activity-content {
   width: 70%;
   margin: auto;
-  aspect-ratio: 1 / 1; /*To make the cells in table square */
+  padding: 2vh;
+  aspect-ratio: 1 / 1; /* To make the cells in table square */
   background: gainsboro;
   display: flex;
+  flex-direction: column;
   place-items: center;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.activity-card-img {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.activity-card-tags-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.activity-card-tags-list {
+  list-style: none;
   justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  width: fit-content;
+}
+
+.activity-card-tags-list li {
+  width: fit-content;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.open-post-btn {
+  width: 15vw;
+  height: 5vh;
+  border-radius: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.open-post-btn:hover {
+  transform: scale(1.1);
+}
+
+.open-post-btn:active {
+  transform: scale(1);
+  background-color: rgb(234, 236, 239);
 }
