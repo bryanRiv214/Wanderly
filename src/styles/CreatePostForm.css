@@ -1,5 +1,5 @@
 form {
-    padding: 50px 100px 50px;
+    padding: 10px 10px 10px 10px;
     border: solid 1px black;
     background-color: rgb(224, 224, 224);
     display: flex;
@@ -25,7 +25,7 @@ label {
     font-weight: bold;
 }
 
-input, textarea, select
+.input, .textArea, .select
             {
     margin-left: 10px;
 }
@@ -50,7 +50,7 @@ textarea {
 }
 
 .WeatherSection, .DurationSection, .ActivityTypeSection,
-        input {
+        .input {
     margin-right: 5px;
 }
 
@@ -58,4 +58,10 @@ textarea {
     width: fit-content;
     border: solid 1px black;
     background-color: rgb(167, 164, 164);
+}
+
+.tab {
+    font-size: xx-large;
+    padding: 0px 0px 20px 0px;
+    font-weight: bold;
 }
