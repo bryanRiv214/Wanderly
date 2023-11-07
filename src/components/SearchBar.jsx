@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import WeatherPanel from "./WeatherPanel";
 import '../styles/SearchBar.css';
 
 const SearchBar = () => {
     const AIRLABS_API_KEY = process.env.REACT_APP_AIRLABS_API_KEY;
+    const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
     const API_URL = `https://airlabs.co/api/v9/cities?country_code=US&api_key=${AIRLABS_API_KEY}`;
 
     const [listOfCities, setListOfCities] = useState([]);
     const [input, setInput] = useState("");
+    const [data, setData] = useState(null);
+
 
     // For now, our program will  include all cities from the US. Feel free to replace the url with 
     // https://airlabs.co/api/v9/cities?api_key=${AIRLABS_API_KEY} 
@@ -21,6 +25,8 @@ const SearchBar = () => {
             const citiesWithIds = response.data.response.map((city, index) => ({
                 id: index,
                 name: city.name,
+                lat: city.lat,
+                lng: city.lng
                 // Include other fields from API results as needed (for now I only included name and ID)
             }));
 
@@ -46,7 +52,16 @@ const SearchBar = () => {
     // Console.log the item selected from the list
     const handleOnSelect = (item) => {
         setInput(item.name);
+        getWeatherData(item.lat, item.lng);
         alert(item.name)
+    }
+
+    const getWeatherData = async (lat, lng) => {
+        const weatherDataURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=imperial&appid=${OPENWEATHER_API_KEY}`;
+        const weatherResponse = await fetch(weatherDataURL);
+        const weatherData = await weatherResponse.json();
+        console.log(weatherData);
+        setData(weatherData);
     }
 
     // This function returns each search result as a formatted span
@@ -59,7 +74,8 @@ const SearchBar = () => {
     }
 
     return (
-        <div className="SearchBar">
+        <div className="main-div">
+            <div className="SearchBar">
             <ReactSearchAutocomplete
                 items={listOfCities}
                 onSearch={handleOnSearch}
@@ -68,7 +84,12 @@ const SearchBar = () => {
                 autoFocus
                 formatResult={formatSearchResults}
             />
+            </div>
+            <div className="weather-panel-div">
+            {data && <WeatherPanel weatherJSON={data}/>}
+            </div>
         </div>
+        
     )
 }
 
