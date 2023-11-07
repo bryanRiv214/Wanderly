@@ -3,12 +3,7 @@
     margin-bottom: 3vh;
     border: 0.3vw solid #3d3c3e;
     color: #5b585e;
-    width:70vw;
-}
-
-#main-div{
-    display:flex;
-    justify-content: center;
+    width:60vw;
 }
 
 #weather-panel{

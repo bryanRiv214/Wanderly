@@ -1,3 +1,9 @@
+.main-div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .SearchBar {
     width: 40vw;
     margin-bottom: 5vh;

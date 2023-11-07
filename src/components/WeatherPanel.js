@@ -1,12 +1,10 @@
 import React from "react";
 import "../styles/WeatherPanel.css";
 
-function WeatherPanel({ weatherJSON, zipCode }) {
-  console.log(zipCode);
+function WeatherPanel({weatherJSON}) {
   return (
     <div id="weather-panel">
       <div id="weather-container-1">
-        {/* <h2 id="zip-code">Zip Code: {zipCode}</h2> */}
         <h2 id="place">{weatherJSON.name}</h2>
 
         <h1 id="description">{weatherJSON.weather[0].description.toUpperCase()}</h1>
