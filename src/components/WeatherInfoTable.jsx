@@ -1,6 +1,9 @@
+import "../styles/WeatherInfoTable.css";
+
 const WeatherInfoTable = () => {
     return (
         <table className="WeatherInfoTable">
+          <tbody>
             {/* First row */}
             <tr>
               <td>Temperature</td>
@@ -31,6 +34,7 @@ const WeatherInfoTable = () => {
               <td>0%</td>
               <td>0 mm</td>
             </tr>
+          </tbody>
         </table>
     )
 }

@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import "../styles/Header.css";
 
 // Navigation bar
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
                 {/* They have to match the paths. See index.js */}
                 <Link to='/' className="navbar-link">Home</Link>
                 <Link to='/map' className="navbar-link">Map</Link>
-                <Link to='/' className="navbar-link">Profile</Link>
+                <Link to='/profile' className="navbar-link">Profile</Link>
             </ul>
         </div>
     </nav>

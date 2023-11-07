@@ -1,0 +1,67 @@
+form {
+    padding: 10px 10px 10px 10px;
+    border: solid 1px black;
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: column;
+}
+
+.ActivitySection, .DescriptionSection,
+    .WeatherSection, .DurationSection, .LocationSection,
+        .PriceSection, .ActivityTypeSection
+            {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+label {
+    font-weight: bold;
+}
+
+.input, .textArea, .select
+            {
+    margin-left: 10px;
+}
+
+.ActivitySection input, textarea
+            {
+    flex-basis: 75%;
+}
+
+.PriceSection input {
+    margin-left: 3px;
+    width: 40px;
+}
+
+.DurationSection input {
+    width: 30px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.WeatherSection, .DurationSection, .ActivityTypeSection,
+        .input {
+    margin-right: 5px;
+}
+
+.SubmitButton {
+    width: fit-content;
+    border: solid 1px black;
+    background-color: rgb(167, 164, 164);
+}
+
+.tab {
+    font-size: xx-large;
+    padding: 0px 0px 20px 0px;
+    font-weight: bold;
+}

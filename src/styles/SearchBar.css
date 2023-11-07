@@ -1,0 +1,13 @@
+.SearchBar {
+    width: 40vw;
+    margin-bottom: 5vh;
+}
+
+.search-result {
+    display: 'block';
+    text-align: 'left';
+}
+
+.search-result:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,41 @@
+.page {
+    background-color: #FBF4EA;
+}
+
+.left-pane {
+    padding: 50px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.image-container img {
+    height: 200px;
+}
+
+.button {
+    background-color: #FBF4EA;
+    padding: 10px 0px 10px 0px;
+    text-align: left;
+    font-size: large;
+    
+}
+
+.right-pane {
+    padding: 50px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: xxx-large;
+    padding: 50px 0px 50px 0px;
+    font-weight: bold;
+}
+
