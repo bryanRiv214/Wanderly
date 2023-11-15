@@ -20,40 +20,39 @@ const SearchBar = () => {
 
     useEffect(() => {
         axios.get(API_URL)
-        .then((response) => {
-            // Process the json so that each city has an ID number (IT'S REQUIRED BY REACT AUTOCOMPLETE SEARCH)
-            const citiesWithIds = response.data.response.map((city, index) => ({
-                id: index,
-                name: city.name,
-                lat: city.lat,
-                lng: city.lng
-                // Include other fields from API results as needed (for now I only included name and ID)
-            }));
+            .then((response) => {
+                // Process the json so that each city has an ID number (IT'S REQUIRED BY REACT AUTOCOMPLETE SEARCH)
+                const citiesWithIds = response.data.response.map((city, index) => ({
+                    id: index,
+                    name: city.name,
+                    lat: city.lat,
+                    lng: city.lng
+                    // Include other fields from API results as needed (for now I only included name and ID)
+                }));
 
-            setListOfCities(citiesWithIds);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+                setListOfCities(citiesWithIds);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
+
     // Console.log the search item and all results
     const handleOnSearch = (string, results) => {
         console.log(string, results);
     }
-    
+
     // Console.log the item hovered
     const handleOnHover = (result) => {
         console.log(result);
     }
-    
+
     // Console.log the item selected from the list
     const handleOnSelect = (item) => {
         setInput(item.name);
         getWeatherData(item.lat, item.lng);
-        alert(item.name)
     }
 
     const getWeatherData = async (lat, lng) => {
@@ -76,20 +75,20 @@ const SearchBar = () => {
     return (
         <div className="main-div">
             <div className="SearchBar">
-            <ReactSearchAutocomplete
-                items={listOfCities}
-                onSearch={handleOnSearch}
-                onHover={handleOnHover}
-                onSelect={handleOnSelect}
-                autoFocus
-                formatResult={formatSearchResults}
-            />
+                <ReactSearchAutocomplete
+                    items={listOfCities}
+                    onSearch={handleOnSearch}
+                    onHover={handleOnHover}
+                    onSelect={handleOnSelect}
+                    autoFocus
+                    formatResult={formatSearchResults}
+                />
             </div>
             <div className="weather-panel-div">
-            {data && <WeatherPanel weatherJSON={data}/>}
+                {data && <WeatherPanel weatherJSON={data} />}
             </div>
         </div>
-        
+
     )
 }
 
