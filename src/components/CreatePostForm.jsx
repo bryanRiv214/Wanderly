@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import '../styles/CreatePostForm.css';
+import supabase from "../config/supabaseClient"
 
 function CreatePostForm() {
 
     const weatherOptions = ["Sunny", "Cloudy", "Rainy", "Snowy", "Windy", "Cold", "Any"];
     const DurationOptions = ["0 - 30 min", "30 - 60 min", "1 - 1.5 hrs", "1.5 - 2 hrs", "2 - 4 hrs", "4 - 8 hrs", "All Day"]
     const activityTypeOptions = ["Indoor", "Outdoor", "Family-Friendly", "Kids", "Adults", "Nightlife", "Relaxing", "Creative", "Shopping", "Sports", "Arts and Crafts", "Guided Tours", "Museums and Education", "Parks and Recreation", "Wellness and Health", "Nature and Hiking", "Food and Drink", "Historical Landmarks", "Festivals and Events", "Other"];
-    const locationOptions = ["New York, NY", "Chicago, IL", "Boston, MA", "Philadephia, PA", "Los Angeles, CA"];
+    // get location options from city / state tables
+    const locationOptions = ["New York, NY", "Chicago, IL", "Boston, MA", "Philadephia, PA", "Los Angeles, CA", "Houston, TX", "San Francisco, CA", "Miami, FL"];
 
     const[title, setTitle] = useState('');
     const handleTitleChange = (e) => {
@@ -39,16 +41,47 @@ function CreatePostForm() {
         setType(e.target.value)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault(); // stops the page from refreshing upon submit
-        const newPost = {title, description, location, duration, price, weather, type, date: new Date().toLocaleString(), likes: 0};
+        const newPost = {title, description, location, price, duration, weather, type};
+        let cityId, durationId, weatherId, activityTypeId;
+
         // error checking
         if(!isFormValid(newPost)) {
             console.log("no good")
             return;
         }
-        console.log(newPost)
+
+        { // get city ID from city name
+        const {data, error} = await supabase.rpc('get_city_id', {input: location.substring(0, location.indexOf(','))})
+        if(data) {cityId = data}; if(error) {console.log(error)}}
+
+        { // get duration ID from duration name
+        const {data, error} = await supabase.rpc('get_duration_id', {input: newPost.duration})
+        if(data) {durationId = data}; if(error) {console.log(error)}}
+
+        { // get weather ID from weather name
+        const {data, error} = await supabase.rpc('get_weather_id', {input: newPost.weather})
+        if(data) {weatherId = data}; if(error) {console.log(error)}}
+
+        { // get activity type ID from activity type name
+        const {data, error} = await supabase.rpc('get_activity_type_id', {input: newPost.type})
+        if(data) {activityTypeId = data}; if(error) {console.log(error)}}
+
+        // adding new record to Post Table
+        const {data, error} = await supabase
+            .from("Posts")
+            .insert([{user_id: 1, title, description, city_id: cityId, price, duration_id: durationId, weather_id: weatherId, activity_type_id: activityTypeId}])
+        if(data) { // might need to add .select to get data
+            console.log(data)
+        }
+        if(error) {
+            console.log(error)
+            // let user know
+        }
+
         // reset state variables
+        // you can notice the delay
         setTitle('')
         setDescription('');
         setLocation('');
@@ -88,7 +121,7 @@ function CreatePostForm() {
                 <br/>
                 <div className='PriceSection'>
                     <label>Estimated Price: $</label>
-                    <input className='input' type='text' name='price' placeholder='###' value={price} onChange={handlePriceChange} maxLength='4' dir='rtl' autoComplete='off' required></input>
+                    <input className='input' type='text' name='price' placeholder='##' value={price} onChange={handlePriceChange} maxLength='4' dir='rtl' autoComplete='off' required></input>
                 </div>
                 <br/>
                 <div className='DurationSection'>
@@ -150,7 +183,6 @@ export default CreatePostForm;
 User ID should be automatic
 */
 // do I need a checked attribute for the radio buttons
-
 
 
 
