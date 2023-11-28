@@ -1,55 +1,61 @@
 .ActivityCard {
   position: relative;
-  width: 80%;
+  width: 60%;
   margin: auto;
-  cursor: pointer;
   margin-bottom: 3vh;
 }
 
 .activity-content-container {
-  width: 70%;
-  margin: auto;
-  padding: 2vh;
-  aspect-ratio: 1 / 1; /* To make the cells in table square */
+  position: relative;
+  width: 100%;
   background: gainsboro;
   display: flex;
-  flex-direction: column;
-  place-items: center;
+  flex-direction: row;
   justify-content: space-evenly;
   border-radius: 20px;
   text-align: center;
+  padding: 2vh;
+}
+
+.activity-info-container {
+  position: relative;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  place-content: space-evenly;
+  height: auto;
+}
+
+.activity-tags-container {
+  display: flex;
+  flex-direction: row;
+  place-content: space-evenly;
+  height: fit-content;
+  height: auto;
 }
 
 .activity-card-img {
-  width: 100%;
+  width: 20%;
   margin: 5px 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
 }
 
 .activity-card-tags-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 
-.activity-card-tags-list {
-  list-style: none;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-  width: fit-content;
-}
-
-.activity-card-tags-list li {
-  width: fit-content;
-  display: inline-block;
-  margin: 0 5px;
+.activity-card-btns {
+  display: flex;
+  flex-direction: column;
+  height: 18vh;
+  place-self: center;
+  justify-content: space-between;
 }
 
 .open-post-btn {
-  width: 15vw;
-  height: 5vh;
-  border-radius: 20px;
-  border: 1px solid black;
+  background: none;
   cursor: pointer;
 }
 
@@ -59,5 +65,21 @@
 
 .open-post-btn:active {
   transform: scale(1);
-  background-color: rgb(234, 236, 239);
+}
+
+.activity-card-likes-btn {
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 3px 0px;
+  width: auto;
+}
+
+.activity-card-likes-btn:hover {
+  transform: scale(105%);
+}
+
+.activity-card-likes-btn:active {
+  transform: translateX(-2px);
+  box-shadow: 0px 1px 0px;
 }

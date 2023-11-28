@@ -31,23 +31,31 @@ const ActivityCard = ({post}) => {
                         <h2 className="activity-card-title">{activity.title}</h2>
 
                         <div className="activity-tags-container">
-                            <p className="activity-card-activity-type">Activity Type</p>
+                            <span className="activity-card-activity-type">Activity Type</span>
 
                             <span className="activity-card-tag-break">|</span>
 
-                            <p className="activity-card-weather">Weather</p>
+                            <span className="activity-card-weather">Weather</span>
 
                             <span className="activity-card-tag-break">|</span>
 
-                            <p className="activity-card-price">Price</p>
+                            <span className="activity-card-price">Price</span>
 
                             <span className="activity-card-tag-break">|</span>
 
-                            <p className="activity-card-duration">Duration</p>
+                            <span className="activity-card-duration">Duration</span>
                         </div>
                     </div>
 
-                    <Link to={`/${post.post_id}`}><button className="open-post-btn">→</button></Link>
+                    <div className="activity-card-btns">
+                        <Link to={`/${post.post_id}`}>
+                            <button className="open-post-btn">
+                                <img className="arrow-right-image" src="/arrow-right.svg" alt="arrow to the right"></img>
+                            </button>
+                        </Link>
+
+                        <button className="activity-card-likes-btn">Likes ##</button>
+                    </div>
                 </div>
             : ""}
         </div>
