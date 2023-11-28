@@ -25,25 +25,27 @@ const ActivityCard = ({post}) => {
         <div className="ActivityCard">
             {post? 
                 <div className="activity-content-container">
-                    <img className="activity-card-img" alt={activity.location} src={activity.image}></img>
+                    <img className="activity-card-img" alt="Activity thumbnail" src="https://res.cloudinary.com/the-infatuation/image/upload/c_fill,w_828,ar_4:3,g_center,f_auto/cms/media/reviews/katzs-deli/banners/Theophilus-_252B-Katzs-019_0"></img>
 
                     <div className="activity-info-container">
                         <h2 className="activity-card-title">{activity.title}</h2>
 
                         <div className="activity-tags-container">
-                            <span className="activity-card-activity-type">Activity Type</span>
+                            <span className="activity-card-activity-type">{activity.activity_type_id
+}</span>
 
                             <span className="activity-card-tag-break">|</span>
 
-                            <span className="activity-card-weather">Weather</span>
+                            <span className="activity-card-weather">{activity.weather_id
+}</span>
 
                             <span className="activity-card-tag-break">|</span>
 
-                            <span className="activity-card-price">Price</span>
+                            <span className="activity-card-price">${activity.price}</span>
 
                             <span className="activity-card-tag-break">|</span>
 
-                            <span className="activity-card-duration">Duration</span>
+                            <span className="activity-card-duration">{activity.duration_id}</span>
                         </div>
                     </div>
 
