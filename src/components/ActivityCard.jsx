@@ -4,22 +4,11 @@ import { Link } from "react-router-dom";
 
 const ActivityCard = ({post}) => {
     const [activity, setActivity] = useState(post);
-    const [date, setDate] = useState("")
-
     useEffect(() => {
         if (!post) {
             setActivity(post);
-            
-            let date = post.timestamp;
-            setDate(date.toLocaleDateString());
         }
-        
-        else if (post && date) {
-            const timestamp = new Date(post.timestamp);
-            const formattedDate = timestamp.toLocaleString();
-            setDate(formattedDate);
-        }
-    }, [post, date]);
+    }, []);
     
     return (
         <div className="ActivityCard">
