@@ -1,40 +1,49 @@
 import ActivityCard from "./ActivityCard";
 import "../styles/ActivitiesTable.css";
+import supabase from "../config/supabaseClient.js";
 import { useState, useEffect } from "react";
 
 const ActivitiesTable = () => {
-    useEffect(()=>{
-        getData();
-    }, [])
+    const [fetchError, setFetchError] = useState(null);
+    const [activities, setActivities] = useState([]);
 
-    const [listOfPosts, setListOfPosts] = useState([]);
+    useEffect(() => {
+        // Get ALL activities for now - CHANGE BASED ON SEARCH
+        const fetchActivities = async () => {
+            const {data, error} = await supabase
+            .from("Posts")
+            .select()
 
-    const getData=()=>{
-        fetch('sampledata.json',{
-          headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-           }
+            if (error) {
+                setFetchError("Could not fetch the activities.");
+                setActivities(null);
+                console.log(error);
+            }
+
+            if (data) {
+                setActivities(data);
+                setFetchError(null);
+            }
         }
-        )
-        .then(function(response){
-          return response.json();
-        })
-        .then(function(data) {
-            setListOfPosts(data.posts);
-        });
-    }
+
+        fetchActivities();
+    }, [])
 
     return (
         <div className="ActivitiesContainer">
-            {listOfPosts? 
-                listOfPosts.map(post => 
-                <ActivityCard 
-                    key={post.post_id}
-                    post={post}
-                />)
-            : ""
-            }
+            {fetchError && (<p>{fetchError}</p>)}
+
+            {activities && (
+                <div className="activities">
+                    {activities.map(activity => (
+                        <ActivityCard 
+                            key={activity.post_id}
+                            post={activity}
+                        />
+                    ))}
+                </div>
+            )}
+                
         </div>
     )
 }
