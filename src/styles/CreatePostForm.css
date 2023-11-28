@@ -6,7 +6,7 @@ form {
     flex-direction: column;
 }
 
-.ActivitySection, .DescriptionSection,
+.TitleSection, .DescriptionSection,
     .WeatherSection, .DurationSection, .LocationSection,
         .PriceSection, .ActivityTypeSection
             {
@@ -30,7 +30,7 @@ label {
     margin-left: 10px;
 }
 
-.ActivitySection input, textarea
+.TitleSection input, textarea
             {
     flex-basis: 75%;
 }
@@ -38,10 +38,6 @@ label {
 .PriceSection input {
     margin-left: 3px;
     width: 40px;
-}
-
-.DurationSection input {
-    width: 30px;
 }
 
 textarea {
