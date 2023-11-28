@@ -24,24 +24,30 @@ const ActivityCard = ({post}) => {
     return (
         <div className="ActivityCard">
             {post? 
-                <div className="activity-content">
-                    <small className="activity-card-timestamp">{date}</small>
-                    <h2 className="activity-card-title">{activity.title}</h2>
-
+                <div className="activity-content-container">
                     <img className="activity-card-img" alt={activity.location} src={activity.image}></img>
 
-                    <p className="activity-card-location">📍 {activity.location}</p>
+                    <div className="activity-info-container">
+                        <h2 className="activity-card-title">{activity.title}</h2>
 
-                    <p className="activity-card-weather">Weather: {activity.weather}</p>
+                        <div className="activity-tags-container">
+                            <p className="activity-card-activity-type">Activity Type</p>
 
-                    <div className="activity-card-tags-container">
-                        <h3>Tags: </h3>
-                        <ul className="activity-card-tags-list">
-                            {activity.tags.map(tag => <li key={tag}>#{tag}</li>)}
-                        </ul>
+                            <span className="activity-card-tag-break">|</span>
+
+                            <p className="activity-card-weather">Weather</p>
+
+                            <span className="activity-card-tag-break">|</span>
+
+                            <p className="activity-card-price">Price</p>
+
+                            <span className="activity-card-tag-break">|</span>
+
+                            <p className="activity-card-duration">Duration</p>
+                        </div>
                     </div>
 
-                    <Link to={`/${post.post_id}`}><button className="open-post-btn">Open Post →</button></Link>
+                    <Link to={`/${post.post_id}`}><button className="open-post-btn">→</button></Link>
                 </div>
             : ""}
         </div>
