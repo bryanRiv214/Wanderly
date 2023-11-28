@@ -7,7 +7,7 @@ function CreatePostForm() {
     const weatherOptions = ["Sunny", "Cloudy", "Rainy", "Snowy", "Windy", "Cold", "Any"];
     const DurationOptions = ["0 - 30 min", "30 - 60 min", "1 - 1.5 hrs", "1.5 - 2 hrs", "2 - 4 hrs", "4 - 8 hrs", "All Day"]
     const activityTypeOptions = ["Indoor", "Outdoor", "Family-Friendly", "Kids", "Adults", "Nightlife", "Relaxing", "Creative", "Shopping", "Sports", "Arts and Crafts", "Guided Tours", "Museums and Education", "Parks and Recreation", "Wellness and Health", "Nature and Hiking", "Food and Drink", "Historical Landmarks", "Festivals and Events", "Other"];
-    // get location options from city / state tables
+    // get location options from city / state tables (can also technically get above options from respective tables)
     const locationOptions = ["New York, NY", "Chicago, IL", "Boston, MA", "Philadephia, PA", "Los Angeles, CA", "Houston, TX", "San Francisco, CA", "Miami, FL"];
 
     const[title, setTitle] = useState('');
