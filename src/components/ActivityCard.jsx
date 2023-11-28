@@ -8,7 +8,7 @@ const ActivityCard = ({post}) => {
         if (!post) {
             setActivity(post);
         }
-    }, []);
+    }, [post]);
     
     return (
         <div className="ActivityCard">
