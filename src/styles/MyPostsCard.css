@@ -1,0 +1,85 @@
+.PostCard {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 3vh;
+  }
+  
+  .Post-content-container {
+    position: relative;
+    width: 100%;
+    background: gainsboro;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    text-align: center;
+    padding: 2vh;
+  }
+  
+  .Post-info-container {
+    position: relative;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    place-content: space-evenly;
+    height: auto;
+  }
+  
+  .Post-tags-container {
+    display: flex;
+    flex-direction: row;
+    place-content: space-evenly;
+    height: fit-content;
+    height: auto;
+  }
+  
+  .Post-card-img {
+    width: 20%;
+    margin: 5px 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+  }
+  
+  .Post-card-tags-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .Post-card-btns {
+    display: flex;
+    flex-direction: column;
+    height: 18vh;
+    place-self: center;
+    justify-content: space-between;
+  }
+  
+  .Post-open-post-btn {
+    background: none;
+    cursor: pointer;
+  }
+  
+  .Post-open-post-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .Post-open-post-btn:active {
+    transform: scale(1);
+  }
+  
+  .Post-card-likes-btn {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 3px 0px;
+    width: auto;
+  }
+  
+  .Post-card-likes-btn:hover {
+    transform: scale(105%);
+  }
+  
+  .Post-card-likes-btn:active {
+    transform: translateX(-2px);
+    box-shadow: 0px 1px 0px;
+  }
