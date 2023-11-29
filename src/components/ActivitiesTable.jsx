@@ -12,7 +12,19 @@ const ActivitiesTable = () => {
         const fetchActivities = async () => {
             const {data, error} = await supabase
             .from("Posts")
-            .select()
+            .select(`
+                post_id, 
+                user_id, 
+                title, 
+                description, 
+                created_at, 
+                Cities (city_id, city_name), 
+                Weather (weather_id, weather_name), 
+                ActivityType (activity_type_id, activity_type_name), 
+                Duration (duration_id, duration), 
+                price, 
+                likes
+            `)
 
             if (error) {
                 setFetchError("Could not fetch the activities.");
@@ -23,6 +35,7 @@ const ActivitiesTable = () => {
             if (data) {
                 setActivities(data);
                 setFetchError(null);
+                console.log(data)
             }
         }
 
