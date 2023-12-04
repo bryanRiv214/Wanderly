@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Header from './components/Header';
@@ -7,11 +7,29 @@ import PageNotFound from './routes/PageNotFound';
 import ProfilePage from './routes/ProfilePage';
 import Footer from './components/Footer';
 import Map from './routes/MapPage'
+import LoginPage from './routes/LoginPage'
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import SignUpPage from './routes/SignUpPage';
+import Homepage2 from './routes/HomePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// can fetch username from token
+const [token, setToken] = useState(false);
+
+if(token) {
+  sessionStorage.setItem('token', JSON.stringify(token))
+}
+
+useEffect(() => {
+  if(sessionStorage.getItem('token')) {
+    let data = JSON.parse(sessionStorage.getItem('token'))
+    setToken(data)
+  }
+}, [])
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -21,6 +39,13 @@ root.render(
           <Route path="*" element={<PageNotFound />} />
           <Route path="profile" element={<ProfilePage/>} />
           <Route path = "map" element = {<Map/>}/>
+          <Route path = "login" element = {<LoginPage setToken={setToken}/>}/>
+          <Route path = "signup" element = {<SignUpPage/>}/>
+          { token ?
+            <Route path = "homepage" element = {<Homepage2/>}/>
+            :
+            'put error page here'
+          }
         </Routes>
       <Footer />
     </BrowserRouter>
