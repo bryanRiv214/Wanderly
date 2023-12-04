@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Header from './components/Header';
-import Homepage from './Homepage';
+import Homepage from './routes/Homepage';
 import PageNotFound from './routes/PageNotFound';
 import ProfilePage from './routes/ProfilePage';
 import Footer from './components/Footer';
