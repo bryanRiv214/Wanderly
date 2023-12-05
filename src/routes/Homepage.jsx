@@ -30,6 +30,7 @@ const Homepage = ({userName, location}) => {
       {/* Replace with a better image. This image was taken from FontAwesome.com */}
       <img className='arrow-down-img' src='arrow-down-solid.svg' alt=''></img>
 
+
     </div>
   );
 }
