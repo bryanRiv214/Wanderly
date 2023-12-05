@@ -1,8 +1,9 @@
-import ActivitiesTable from "./components/ActivitiesTable";
-import SearchBar from "./components/SearchBar";
-import "./styles/Homepage.css";
+import ActivitiesTable from "../components/ActivitiesTable";
+import SearchBar from "../components/SearchBar";
+import "../styles/Homepage.css";
 
 // Starting page
+
 const Homepage = ({userName, location}) => {
   return (
     <div className="Homepage">

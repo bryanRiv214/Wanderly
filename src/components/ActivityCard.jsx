@@ -20,12 +20,12 @@ const ActivityCard = ({post}) => {
                         <h2 className="activity-card-title">{activity.title}</h2>
 
                         <div className="activity-tags-container">
-                            <span className="activity-card-activity-type">{activity.activity_type_id
+                            <span className="activity-card-activity-type">{activity.ActivityType.activity_type_name
 }</span>
 
                             <span className="activity-card-tag-break">|</span>
 
-                            <span className="activity-card-weather">{activity.weather_id
+                            <span className="activity-card-weather">{activity.Weather.weather_name
 }</span>
 
                             <span className="activity-card-tag-break">|</span>
@@ -34,7 +34,7 @@ const ActivityCard = ({post}) => {
 
                             <span className="activity-card-tag-break">|</span>
 
-                            <span className="activity-card-duration">{activity.duration_id}</span>
+                            <span className="activity-card-duration">{activity.Duration.duration}</span>
                         </div>
                     </div>
 

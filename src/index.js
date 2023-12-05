@@ -1,18 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Header from './components/Header';
-import Homepage from './Homepage';
-import PageNotFound from './routes/PageNotFound';
-import ProfilePage from './routes/ProfilePage';
-import Footer from './components/Footer';
-import Map from './routes/MapPage'
-import LoginPage from './routes/LoginPage'
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SignUpPage from './routes/SignUpPage';
-import Homepage2 from './routes/HomePage';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -33,24 +25,8 @@ useEffect(() => {
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Header />
-      <Routes>
-          <Route index element={<Homepage userName="Bryan" location="New York City"/>} />
-          <Route path="*" element={<PageNotFound />} />
-          <Route path="profile" element={<ProfilePage/>} />
-          <Route path = "map" element = {<Map/>}/>
-          <Route path = "login" element = {<LoginPage setToken={setToken}/>}/>
-          <Route path = "signup" element = {<SignUpPage/>}/>
-          { token ?
-            <Route path = "homepage" element = {<Homepage2/>}/>
-            :
-            'put error page here'
-          }
-        </Routes>
-      <Footer />
+      <App />
     </BrowserRouter>
-
-    
   </React.StrictMode>
 );
 
