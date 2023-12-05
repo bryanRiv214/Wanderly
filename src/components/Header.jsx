@@ -7,7 +7,7 @@ const Header = () => {
         <nav className="Header">
             <div className='website-title-container'>
             {/* This is just a placeholder for our logo. Replace with an image or SVG once we have the logo */}
-            <div className='logo'></div>
+            <img className='logo' src='logo.png' alt="wanderly logo"></img>
             <h2 className='wanderly-title'>Wanderly</h2>
         </div>
 
