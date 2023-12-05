@@ -6,6 +6,8 @@ import ProfilePage from './routes/ProfilePage';
 import Footer from './components/Footer';
 import Map from './routes/MapPage'
 import { Route, Routes } from 'react-router-dom';
+import Login from './routes/LoginPage';
+import SignUp from './routes/SignUpPage'
 
 const App = () => {
 
@@ -31,6 +33,8 @@ const App = () => {
                 <Route path="*" element={<PageNotFound />} />
                 <Route path="profile" element={<ProfilePage/>} />
                 <Route path = "map" element = {<Map/>}/>
+                <Route path = "login" element = {<Login setToken={setToken}/>}/>
+                <Route path = "signup" element = {<SignUp/>}/>
             </Routes>
             <Footer />
         </div>

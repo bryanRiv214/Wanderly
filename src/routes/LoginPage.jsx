@@ -37,7 +37,7 @@ function LoginPage({setToken}) {
             console.log(data)
             alert("Logged in")
             setToken(data)
-            navigate('/homepage')
+            navigate('../')
           }
     }
 
