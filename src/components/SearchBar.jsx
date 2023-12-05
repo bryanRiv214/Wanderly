@@ -10,7 +10,7 @@ const SearchBar = () => {
     const [listOfCities, setListOfCities] = useState([]);
     const [fetchError, setFetchError] = useState(null);
     const [input, setInput] = useState("");
-    const [data, setData] = useState(null);
+    const [weatherData, setWeatherData] = useState(null);
 
     useEffect(() => {
         const fetchCities = async () => {
@@ -59,8 +59,8 @@ const SearchBar = () => {
 
     // Console.log the item selected from the list
     const handleOnSelect = (item) => {
-        setInput(item.name);
-        getWeatherData(item.lat, item.lng);
+        setInput(item.city_name);
+        getWeatherData(item.latitude, item.longitude);
     }
 
     const getWeatherData = async (lat, lng) => {
@@ -68,7 +68,7 @@ const SearchBar = () => {
         const weatherResponse = await fetch(weatherDataURL);
         const weatherData = await weatherResponse.json();
         console.log(weatherData);
-        setData(weatherData);
+        setWeatherData(weatherData);
     }
 
     // This function returns each search result as a formatted span
@@ -94,7 +94,7 @@ const SearchBar = () => {
 
             </div>
             <div className="weather-panel-div">
-                {data && <WeatherPanel weatherJSON={data} />}
+                {weatherData && <WeatherPanel weatherJSON={weatherData} />}
             </div>
         </div>
 
