@@ -22,4 +22,4 @@ const Homepage = ({userName, location}) => {
   );
 }
 
-export default Homepage;
+export default Homepage; 
