@@ -1,40 +1,48 @@
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import supabase from "../config/supabaseClient.js";
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import WeatherPanel from "./WeatherPanel";
 import '../styles/SearchBar.css';
 
 const SearchBar = () => {
-    const AIRLABS_API_KEY = process.env.REACT_APP_AIRLABS_API_KEY;
     const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
-    const API_URL = `https://airlabs.co/api/v9/cities?country_code=US&api_key=${AIRLABS_API_KEY}`;
 
     const [listOfCities, setListOfCities] = useState([]);
+    const [fetchError, setFetchError] = useState(null);
     const [input, setInput] = useState("");
     const [data, setData] = useState(null);
 
-
-    // For now, our program will  include all cities from the US. Feel free to replace the url with 
-    // https://airlabs.co/api/v9/cities?api_key=${AIRLABS_API_KEY} 
-    // to get all cities in the world
-
     useEffect(() => {
-        axios.get(API_URL)
-            .then((response) => {
-                // Process the json so that each city has an ID number (IT'S REQUIRED BY REACT AUTOCOMPLETE SEARCH)
-                const citiesWithIds = response.data.response.map((city, index) => ({
-                    id: index,
-                    name: city.name,
-                    lat: city.lat,
-                    lng: city.lng
-                    // Include other fields from API results as needed (for now I only included name and ID)
+        const fetchCities = async () => {
+            const { data, error } = await supabase
+                .from("Cities")
+                .select(`
+                    city_id,
+                    city_name, 
+                    latitude, 
+                    longitude, 
+                    States (state_id, abbreviation)
+                `)
+
+            if (error) {
+                setFetchError("Could not fetch the cities.");
+                setListOfCities([]);
+                console.error(fetchError);
+            }
+        
+            if (data) {
+                const uniqueCities = data.map((city) => ({
+                    id: city.city_id, // Assuming city_id is available
+                    name: `${city.city_name}, ${city.States.abbreviation}`,
+                    ...city,
                 }));
 
-                setListOfCities(citiesWithIds);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+                setListOfCities(uniqueCities);
+                setFetchError(null);
+            }
+        };
+        
+        fetchCities();
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -66,23 +74,24 @@ const SearchBar = () => {
     // This function returns each search result as a formatted span
     const formatSearchResults = (result) => {
         return (
-            <div className="searchResult">
+            <div key={result.id} className="searchResult">
                 <span className="search-result">{result.name}</span>
             </div>
-        )
-    }
+        );
+    };
 
     return (
         <div className="main-div">
             <div className="SearchBar">
-                <ReactSearchAutocomplete
-                    items={listOfCities}
-                    onSearch={handleOnSearch}
-                    onHover={handleOnHover}
-                    onSelect={handleOnSelect}
-                    autoFocus
-                    formatResult={formatSearchResults}
+            <ReactSearchAutocomplete
+                items={listOfCities}
+                onSearch={handleOnSearch}
+                onHover={handleOnHover}
+                onSelect={handleOnSelect}
+                autoFocus
+                formatResult={formatSearchResults}
                 />
+
             </div>
             <div className="weather-panel-div">
                 {data && <WeatherPanel weatherJSON={data} />}
