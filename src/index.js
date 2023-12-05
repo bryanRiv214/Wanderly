@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -7,20 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-// can fetch username from token
-const [token, setToken] = useState(false);
-
-if(token) {
-  sessionStorage.setItem('token', JSON.stringify(token))
-}
-
-useEffect(() => {
-  if(sessionStorage.getItem('token')) {
-    let data = JSON.parse(sessionStorage.getItem('token'))
-    setToken(data)
-  }
-}, [])
 
 root.render(
   <React.StrictMode>
