@@ -29,13 +29,11 @@ const ActivitiesTable = () => {
             if (error) {
                 setFetchError("Could not fetch the activities.");
                 setActivities(null);
-                console.log(error);
             }
 
             if (data) {
                 setActivities(data);
                 setFetchError(null);
-                console.log(data)
             }
         }
 
