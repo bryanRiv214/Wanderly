@@ -11,8 +11,6 @@ function LoginPage({setToken}) {
         password:''
     })
 
-    console.log(loginFormData)
-
     function handleChange(e) {
         setLoginFormData((prevFormData) => {
             return {
@@ -37,7 +35,7 @@ function LoginPage({setToken}) {
             console.log(data)
             alert("Logged in")
             setToken(data)
-            navigate('../')
+            navigate('../homepage')
           }
     }
 

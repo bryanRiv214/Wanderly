@@ -8,6 +8,7 @@ import Map from './routes/MapPage';
 import { Route, Routes } from 'react-router-dom';
 import Login from './routes/LoginPage';
 import SignUp from './routes/SignUpPage';
+import LandingPage from './routes/LandingPage';
 
 const App = () => {
 
@@ -27,20 +28,24 @@ const App = () => {
 
     return (
         <div>
-            <Header />
-            <Routes>
-                {token ?
-                <Route index element={<HomePage userName="Bryan" location="New York City"/>} />
-                :
-                ''
-                }
-                <Route path="*" element={<PageNotFound />} />
-                <Route path="profile" element={<ProfilePage/>} />
-                <Route path = "map" element = {<Map/>}/>
-                <Route path = "login" element = {<Login setToken={setToken}/>}/>
-                <Route path = "signup" element = {<SignUp/>}/>
-            </Routes>
-            <Footer />
+            {token ?
+                <div>
+                <Header />
+                <Routes>  
+                    <Route path="homepage" element={<HomePage userName="Bryan" location="New York City" setToken={setToken}/>} />
+                    <Route path="profile" element={<ProfilePage/>} />
+                    <Route path = "map" element = {<Map/>}/>
+                </Routes>
+                <Footer />
+                </div>
+            :
+                <Routes>
+                    <Route index element={<LandingPage/>}></Route>
+                    <Route path="*" element={<PageNotFound />} />
+                    <Route path = "login" element = {<Login setToken={setToken}/>}/>
+                    <Route path = "signup" element = {<SignUp/>}/>
+                </Routes>
+            }
         </div>
     )
 }

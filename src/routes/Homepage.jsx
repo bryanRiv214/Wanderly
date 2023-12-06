@@ -6,13 +6,14 @@ import '../styles/Homepage.css';
 
 // Starting page
 
-const HomePage = ({userName, location}) => {
+const HomePage = ({userName, location, setToken}) => {
 
   let navigate = useNavigate();
 
   function handleLogout () {
     sessionStorage.removeItem('token');
-    navigate('/login');
+    setToken(false)
+    navigate('/');
   }
 
   return (

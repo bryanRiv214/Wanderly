@@ -10,8 +10,6 @@ function SignUpPage() {
         password:''
     })
 
-    console.log(signupFormData)
-
     function handleChange(e) {
         setSignupFormData((prevFormData) => {
             return {
