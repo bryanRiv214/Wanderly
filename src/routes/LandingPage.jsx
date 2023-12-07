@@ -1,24 +1,33 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'
+import React, {useState} from 'react';
+import '../styles/LandingPage.css'
+import Login from "../components/LoginForm"
+import SignUp from "../components/SignUpForm"
 
 // Starting page
 
-const LandingPage = () => {
+const LandingPage = ({setToken}) => {
 
-    const navigate = useNavigate()
+    const[formType, setFormType] = useState('Login')
 
-    function handleSignup () {
-        navigate('/signup')
-    }
-
-    function handleLogin () {
-        navigate('/login')
+    function handleClick() {
+        if(formType === 'Login') {
+            setFormType('Signup')
+        } else {
+            setFormType('Login')
+        }
     }
 
     return (
-        <div>
-            <button onClick={handleSignup}>Signup</button>
-            <button onClick={handleLogin}>Login</button>
+        <div className="LandingPage">
+            <div className="box">
+                <div>{formType}</div>
+                {formType === "Login" ?
+                    <Login setToken={setToken}/>
+                    :
+                    <SignUp/>
+                }
+                Don't have an account? <span style={{ color: 'blue', cursor: 'pointer' }} onClick={handleClick}>{formType}</span>
+            </div>
         </div>
     );
 }

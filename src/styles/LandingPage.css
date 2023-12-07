@@ -1,0 +1,17 @@
+.LandingPage {
+    background-color: rgb(250, 240, 228);
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.box {
+    background-color: rgb(210, 212, 205);
+    width: 50%;
+    height: fit-content;
+    border: 3px solid rgb(3, 3, 2);
+    padding: 10px 10px 10px 10px;
+}
