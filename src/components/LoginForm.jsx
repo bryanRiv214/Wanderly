@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import supabase from '../config/supabaseClient'
 import { useNavigate } from 'react-router-dom'
+import "../styles/LoginSignUpForms.css"
 
 function LoginForm({setToken}) {
 
@@ -30,6 +31,7 @@ function LoginForm({setToken}) {
 
           if(error) {
             console.log(error)
+            alert("Invalid Login")
           }
           else if(data) {
             console.log(data)
@@ -40,11 +42,13 @@ function LoginForm({setToken}) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input placeholder="email" name="email" onChange={handleChange}></input>
-                <input type="password" placeholder="password" name="password" onChange={handleChange}></input>
-                <button type="submit">Submit</button>
+        <div className='wrapper-div'>
+            <form className='form' onSubmit={handleSubmit}>
+                <label className='login-signup-label'>Email</label>
+                <input className="login-signup-input" placeholder="email" name="email" onChange={handleChange}></input>
+                <label className='login-signup-label'>Password</label>
+                <input className="login-signup-input" type="password" placeholder="password" name="password" onChange={handleChange}></input> {/* patterm validation */}
+                <button className="login-signup-button" type="submit">Login</button>
             </form>
         </div>
     );

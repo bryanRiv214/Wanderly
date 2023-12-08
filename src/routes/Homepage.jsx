@@ -1,26 +1,19 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import ActivitiesTable from '../components/ActivitiesTable';
 import SearchBar from '../components/SearchBar';
 import '../styles/Homepage.css';
+import Logout from '../components/Logout';
 
 // Starting page
 
 const HomePage = ({userName, location, setToken}) => {
 
-  let navigate = useNavigate();
-
-  function handleLogout () {
-    sessionStorage.removeItem('token');
-    setToken(false)
-    navigate('/');
-  }
-
   return (
     <div className='Homepage'>
-      <h1 className='good-morning-msg'>Good Morning, {userName}</h1>
 
-      <button onClick={handleLogout}>Logout</button>
+      <Logout setToken={setToken}/>
+
+      <h1 className='good-morning-msg'>Good Morning, {userName}</h1>
 
       <SearchBar/>
 

@@ -6,8 +6,6 @@ import ProfilePage from './routes/ProfilePage';
 import Footer from './components/Footer';
 import Map from './routes/MapPage';
 import { Route, Routes } from 'react-router-dom';
-import Login from './routes/LoginPage';
-import SignUp from './routes/SignUpPage';
 import LandingPage from './routes/LandingPage';
 
 const App = () => {
@@ -35,15 +33,14 @@ const App = () => {
                     <Route path="homepage" element={<HomePage userName="Bryan" location="New York City" setToken={setToken}/>} />
                     <Route path="profile" element={<ProfilePage/>} />
                     <Route path = "map" element = {<Map/>}/>
+                    <Route path="*" element={<PageNotFound />} />
                 </Routes>
                 <Footer />
                 </div>
             :
                 <Routes>
-                    <Route index element={<LandingPage/>}></Route>
+                    <Route index element={<LandingPage setToken={setToken}/>}></Route>
                     <Route path="*" element={<PageNotFound />} />
-                    <Route path = "login" element = {<Login setToken={setToken}/>}/>
-                    <Route path = "signup" element = {<SignUp/>}/>
                 </Routes>
             }
         </div>

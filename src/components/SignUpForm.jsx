@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import supabase from '../config/supabaseClient'
+import "../styles/LoginSignUpForms.css"
 
 function SignUpForm() {
 
@@ -42,12 +43,15 @@ function SignUpForm() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input placeholder="username" name="username" onChange={handleChange}></input>
-                <input placeholder="email" name="email" onChange={handleChange}></input>
-                <input type="password" placeholder="password" name="password" onChange={handleChange}></input>
-                <button type="submit">Submit</button>
+        <div className='wrapper-div'>
+            <form className='form' onSubmit={handleSubmit}>
+                <label className='login-signup-label'>Username</label>
+                <input className="login-signup-input" placeholder="username" name="username" onChange={handleChange}></input>
+                <label className='login-signup-label'>Email</label>
+                <input className="login-signup-input" placeholder="email" name="email" onChange={handleChange}></input>
+                <label className='login-signup-label'>Password</label>
+                <input className="login-signup-input" type="password" placeholder="password" name="password" onChange={handleChange}></input>
+                <button className="login-signup-button" type="submit">Signup</button>
             </form>
         </div>
     );
