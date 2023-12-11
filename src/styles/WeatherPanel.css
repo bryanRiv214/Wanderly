@@ -12,6 +12,7 @@
     width: 60vw;
     height: auto;
     background-color: #d8d9d8;
+    cursor: pointer;
 }
 
 #weather-container-top {
@@ -49,4 +50,38 @@
 
 .weather-info-container h3 {
     text-align: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #weather-panel-container {
+        width: 90vw;
+        margin-bottom: 7vh;
+        padding: 2vh;
+    }
+
+    .weather-info-container h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #weather-panel-container {
+        width: 85vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #weather-panel-container {
+        width: 80vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #weather-panel-container {
+        width: 60vw;
+    }
 }
