@@ -1,31 +1,38 @@
 import React from 'react';
-import ActivitiesTable from '../components/ActivitiesTable';
-import SearchBar from '../components/SearchBar';
-import '../styles/Homepage.css';
-import Logout from '../components/Logout';
+import { useNavigate } from 'react-router-dom';
+import ActivitiesTable from "../components/ActivitiesTable";
+import SearchBar from "../components/SearchBar";
+import "../styles/Homepage.css";
 
 // Starting page
 
-const HomePage = ({userName, location, setToken}) => {
+const Homepage = ({userName, location}) => {
+
+  let navigate = useNavigate();
+
+  function handleLogout() {
+    sessionStorage.removeItem('token')
+    navigate('/login')
+  }
 
   return (
-    <div className='Homepage'>
+    <div className="Homepage">
+      <h1 className="good-morning-msg">Good Morning, {userName}</h1>
 
-      <Logout setToken={setToken}/>
+      <button onClick={handleLogout}>Logout</button>
 
-      <h1 className='good-morning-msg'>Good Morning, {userName}</h1>
-
-      <SearchBar/>
+      <SearchBar />
 
       <h2>What can you do today?</h2>
+      
+      <ActivitiesTable />
 
-      <ActivitiesTable/>
-
-      {/* Replace with a better image, this image was taken from FontAwesome.com */}
+      {/* Replace with a better image. This image was taken from FontAwesome.com */}
       <img className='arrow-down-img' src='arrow-down-solid.svg' alt=''></img>
+
 
     </div>
   );
 }
 
-export default HomePage;
+export default Homepage; 
