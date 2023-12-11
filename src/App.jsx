@@ -10,7 +10,7 @@ import LandingPage from './routes/LandingPage';
 
 const App = () => {
 
-    // can fetch username from token
+    // can fetch username and other user data from token
     const [token, setToken] = useState(false);
 
     if(token) {
