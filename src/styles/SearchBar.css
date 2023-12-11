@@ -1,4 +1,4 @@
-.main-div{
+.main-div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,4 +18,34 @@
 
 .search-result:hover {
     cursor: pointer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .SearchBar {
+        width: 85vw;
+        margin-bottom: 7vh;
+        padding: 2vh;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .SearchBar {
+        width: 80vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .SearchBar {
+        width: 60vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .SearchBar {
+        width: 40vw;
+    }
 }
