@@ -3,14 +3,15 @@ import "../styles/ActivitiesTable.css";
 import supabase from "../config/supabaseClient.js";
 import { useState, useEffect } from "react";
 
-const ActivitiesTable = () => {
+const ActivitiesTable = ({selectedCity}) => {
     const [fetchError, setFetchError] = useState(null);
     const [activities, setActivities] = useState([]);
 
     useEffect(() => {
         // Get ALL activities for now - CHANGE BASED ON SEARCH
         const fetchActivities = async () => {
-            const {data, error} = await supabase
+            console.log("Activity: " + selectedCity);
+            let query = supabase
             .from("Posts")
             .select(`
                 post_id, 
@@ -24,7 +25,11 @@ const ActivitiesTable = () => {
                 Duration (duration_id, duration), 
                 price, 
                 likes
-            `)
+            `);
+            if(selectedCity){
+                query = query.eq('city_name', selectedCity);
+            }
+            const {data, error} = await query;
 
             if (error) {
                 setFetchError("Could not fetch the activities.");
@@ -40,7 +45,7 @@ const ActivitiesTable = () => {
         }
 
         fetchActivities();
-    }, [])
+    }, [selectedCity])
 
     return (
         <div className="ActivitiesContainer">

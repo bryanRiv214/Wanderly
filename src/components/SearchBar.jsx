@@ -4,7 +4,7 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import WeatherPanel from "./WeatherPanel";
 import '../styles/SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = ({onCitySelect}) => {
     const AIRLABS_API_KEY = process.env.REACT_APP_AIRLABS_API_KEY;
     const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
     const API_URL = `https://airlabs.co/api/v9/cities?country_code=US&api_key=${AIRLABS_API_KEY}`;
@@ -21,6 +21,7 @@ const SearchBar = () => {
     useEffect(() => {
         axios.get(API_URL)
             .then((response) => {
+                console.log(response);
                 // Process the json so that each city has an ID number (IT'S REQUIRED BY REACT AUTOCOMPLETE SEARCH)
                 const citiesWithIds = response.data.response.map((city, index) => ({
                     id: index,
@@ -53,6 +54,7 @@ const SearchBar = () => {
     const handleOnSelect = (item) => {
         setInput(item.name);
         getWeatherData(item.lat, item.lng);
+        onCitySelect(item.name);
     }
 
     const getWeatherData = async (lat, lng) => {
