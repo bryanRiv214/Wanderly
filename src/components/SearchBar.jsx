@@ -60,7 +60,7 @@ const SearchBar = ({onCitySelect}) => {
     // Console.log the item selected from the list
     const handleOnSelect = (item) => {
         setInput(item.name);
-        getWeatherData(item.lat, item.lng);
+        getWeatherData(item.latitude, item.longitude);
         onCitySelect(item.name);
     }
 
