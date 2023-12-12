@@ -1,0 +1,32 @@
+.wrapper-div {
+    width: 80%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-signup-label {
+    font-size: small;
+    margin: 5px 0px 5px;
+}
+
+.login-signup-input {
+    margin-bottom: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-signup-input::placeholder {
+    font-size: small;
+}
+
+.login-signup-button {
+    margin: 20px 0px 5px 0px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    width: fit-content;
+    align-self: center;
+}

@@ -44,7 +44,7 @@ function CreatePostForm() {
     const handleSubmit = async (e) => {
         e.preventDefault(); // stops the page from refreshing upon submit
         const newPost = {title, description, location, price, duration, weather, type};
-        let cityId, durationId, weatherId, activityTypeId;
+        let uuid, cityId, durationId, weatherId, activityTypeId;
 
         // error checking
         if(!isFormValid(newPost)) {
@@ -52,8 +52,11 @@ function CreatePostForm() {
             return;
         }
 
+        // get uuid
+        uuid = JSON.parse(sessionStorage.getItem('token')).user.id;
+
         { // get city ID from city name
-        const {data, error} = await supabase.rpc('get_city_id', {input: location.substring(0, location.indexOf(','))})
+        const {data, error} = await supabase.rpc('get_city_id', {input: location.substring(0, location.indexOf(','))}) // does this take into account two cities with the same name from different states?
         if(data) {cityId = data}; if(error) {console.log(error)}}
 
         { // get duration ID from duration name
@@ -71,7 +74,7 @@ function CreatePostForm() {
         // adding new record to Post Table
         const {data, error} = await supabase
             .from("Posts")
-            .insert([{user_id: 1, title, description, city_id: cityId, price, duration_id: durationId, weather_id: weatherId, activity_type_id: activityTypeId}])
+            .insert([{user_id: uuid, title, description, city_id: cityId, price, duration_id: durationId, weather_id: weatherId, activity_type_id: activityTypeId}])
         if(data) { // might need to add .select to get data
             console.log(data)
         }
