@@ -11,8 +11,6 @@ const HomePage = ({userName, location}) => {
     <div className="Homepage">
       <h1 className="good-morning-msg">Good Morning, {userName}</h1>
 
-      <Logout />
-
       <SearchBar />
 
       <h2>What can you do today?</h2>
