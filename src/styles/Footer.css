@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 1vh 0;
+  padding: 1vh 2vh;
 }
 
 .footer-row-container {
@@ -36,6 +36,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   place-items: center;
+  background-color: aquamarine;
 }
 
 .social-media-icon {
@@ -52,4 +53,51 @@
 
 .terms-and-privacy-container p{
   cursor: pointer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .Footer {
+    background-color: rgb(172, 178, 152);
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-row-container {
+    background-color: aqua;
+    align-content: center;
+    border: 2px solid black;
+  }
+
+  .slogan {
+    background-color: rgb(184, 184, 100);
+    flex-grow: 50;
+  }
+
+  .social-media-icons-container {
+    flex-grow: 5;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #weather-panel-container {
+      width: 85vw;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #weather-panel-container {
+      width: 80vw;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #weather-panel-container {
+      width: 60vw;
+  }
 }
