@@ -6,7 +6,7 @@ import "../styles/Homepage.css";
 
 // Starting page
 
-const Homepage = ({userName, location}) => {
+const HomePage = ({userName, location}) => {
   return (
     <div className="Homepage">
       <h1 className="good-morning-msg">Good Morning, {userName}</h1>
@@ -25,4 +25,4 @@ const Homepage = ({userName, location}) => {
   );
 }
 
-export default Homepage; 
+export default HomePage; 
