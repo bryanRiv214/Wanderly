@@ -1,0 +1,31 @@
+.LandingPage {
+    background-color: rgb(250, 240, 228);
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.box {
+    background-color: white;
+    width: 50%;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.formType {
+    font-size: xx-large;
+    padding: 10px 0px 10px;
+}
+
+.change-form-message {
+    font-size: small;
+}
