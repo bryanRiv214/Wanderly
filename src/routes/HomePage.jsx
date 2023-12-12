@@ -1,5 +1,4 @@
 import React from 'react';
-import Logout from '../components/Logout';
 import ActivitiesTable from "../components/ActivitiesTable";
 import SearchBar from "../components/SearchBar";
 import "../styles/Homepage.css";
