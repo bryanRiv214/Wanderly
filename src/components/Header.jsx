@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
+import Logout from "../components/Logout.jsx";
 
 // Navigation bar
 const Header = () => {
@@ -18,6 +19,7 @@ const Header = () => {
                 <Link to='/homepage' className="navbar-link">Home</Link>
                 <Link to='/map' className="navbar-link">Map</Link>
                 <Link to='/profile' className="navbar-link">Profile</Link>
+                <Logout />
             </ul>
         </div>
     </nav>
