@@ -1,20 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Logout = ({setToken}) => {
-
+const Logout = () => {
   let navigate = useNavigate();
 
   function handleLogout () {
     sessionStorage.removeItem('token');
-    setToken(false)
-    navigate('/');
+    navigate('');
+    window.location.reload(false);
   }
 
   return (
-    <div className='Homepage'>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+      <button className="logout-btn" onClick={handleLogout}>Log out</button>
   );
 }
 
