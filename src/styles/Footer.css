@@ -1,28 +1,22 @@
 /* Style Footer */
 .Footer {
   background-color: rgb(172, 178, 152);
-  width: 100vw;
-  height: 18vh;
+  height: auto;
+  min-height: 18vh;
+  padding: 2vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 1vh 2vh;
 }
 
 .footer-row-container {
-  height: fit-content;
-  width: 90vw;
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  place-items: center;
-  justify-content: space-between;
   place-self: center;
-  line-height: 4vh;
+  place-content: center;
 }
 
 .slogan {
   width: fit-content;
-  height: fit-content;
 }
 
 .wanderly-beige {
@@ -30,74 +24,27 @@
 }
 
 .social-media-icons-container {
-  height: fit-content;
-  width: 25vw;
+  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  place-items: center;
-  background-color: aquamarine;
+  margin-bottom: 2vh;
 }
 
 .social-media-icon {
-  height: 4vh;
+  height: 6vh;
   cursor: pointer;
 }
 
-.terms-and-privacy-container {
-  width: 30vw;
+.website-info-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  text-align: center;
 }
 
 .terms-and-privacy-container p{
   cursor: pointer;
+  width: fit-content;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .Footer {
-    background-color: rgb(172, 178, 152);
-    width: 100vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .footer-row-container {
-    background-color: aqua;
-    align-content: center;
-    border: 2px solid black;
-  }
-
-  .slogan {
-    background-color: rgb(184, 184, 100);
-    flex-grow: 50;
-  }
-
-  .social-media-icons-container {
-    flex-grow: 5;
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  #weather-panel-container {
-      width: 85vw;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  #weather-panel-container {
-      width: 80vw;
-  }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  #weather-panel-container {
-      width: 60vw;
-  }
+.terms-and-privacy-container {
+  text-align: center;
 }
