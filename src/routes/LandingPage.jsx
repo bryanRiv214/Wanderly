@@ -25,13 +25,23 @@ const LandingPage = ({setToken}) => {
             <div className="box">
                 <div className="formType">{formType}</div>
                 {formType === "Login" ?
-                    <Login setToken={setToken}/>
+                    <div className='form-container'>
+                        <Login setToken={setToken}/>
+
+                        <div className="change-form-message">
+                            Don't have an account? <span style={{ color: 'blue', cursor: 'pointer' }} onClick={handleClick}>{otherFormType}</span>
+                        </div>
+                    </div>
                     :
-                    <SignUp/>
+                    <div className='form-container'>
+                        <SignUp/>
+
+                        <div className="change-form-message">
+                            Have an account? <span style={{ color: 'blue', cursor: 'pointer' }} onClick={handleClick}>{otherFormType}</span>
+                        </div>
+                    </div>
                 }
-                <div className="change-form-message">
-                    Don't have an account? <span style={{ color: 'blue', cursor: 'pointer' }} onClick={handleClick}>{otherFormType}</span>
-                </div>
+                
             </div>
         </div>
     );
