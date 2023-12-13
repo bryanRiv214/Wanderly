@@ -11,7 +11,7 @@ import MyPostsCard from '../components/MyPostsCard.jsx'
 import MyPostsTable from '../components/MyPostsTable.jsx';
 
 
-const ProfilePage = () => {
+const ProfilePage = ({firstName, lastName}) => {
    
     
    
@@ -38,7 +38,7 @@ const ProfilePage = () => {
                 <div className='col-8'>
                     <div className='right-pane'>
                         <div className='profile-name'>
-                            Bryan Rivera
+                            {firstName} {lastName}
                         </div>
                         <div>
                             {tab==='Edit Profile' && <div>Edit Profile Content will go here.</div>}
