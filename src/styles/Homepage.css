@@ -6,7 +6,7 @@
 .Homepage {
   background-color: rgb(250, 240, 228);
   width: 100vw;
-  height: fit-content;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   place-items: center;

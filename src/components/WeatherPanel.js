@@ -3,8 +3,8 @@ import "../styles/WeatherPanel.css";
 
 function WeatherPanel({weatherJSON}) {
   return (
-    <div id="weather-panel">
-      <div id="weather-container-1">
+    <div id="weather-panel-container">
+      <div id="weather-container-top">
         <h2 id="place">{weatherJSON.name}</h2>
 
         <h1 id="description">{weatherJSON.weather[0].description.toUpperCase()}</h1>
@@ -13,7 +13,8 @@ function WeatherPanel({weatherJSON}) {
           src={`https://openweathermap.org/img/wn/${weatherJSON.weather[0].icon}@4x.png`}
         />
       </div>
-      <div id="weather-container-2">
+      <hr></hr>
+      <div className="weather-info-container weather-info-container-1">
         <div>
           <h2>Temperature</h2>
           <h3 id="temperature"> {Math.round(weatherJSON.main.temp)}°F</h3>
@@ -36,7 +37,8 @@ function WeatherPanel({weatherJSON}) {
           </h3>
         </div>
       </div>
-      <div id="weather-container-3">
+      <hr></hr>
+      <div className="weather-info-container weather-info-container-2">
         <div>
           <h2>Wind Speed</h2>
           <h3 id="wind-speed">
@@ -56,7 +58,6 @@ function WeatherPanel({weatherJSON}) {
           </h3>
         </div>
       </div>
-
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
+import Logout from "../components/Logout.jsx";
 
 // Navigation bar
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
         <nav className="Header">
             <div className='website-title-container'>
             {/* This is just a placeholder for our logo. Replace with an image or SVG once we have the logo */}
-            <div className='logo'></div>
+            <img className='logo' src='logo.png' alt="wanderly logo"></img>
             <h2 className='wanderly-title'>Wanderly</h2>
         </div>
 
@@ -18,6 +19,7 @@ const Header = () => {
                 <Link to='/homepage' className="navbar-link">Home</Link>
                 <Link to='/map' className="navbar-link">Map</Link>
                 <Link to='/profile' className="navbar-link">Profile</Link>
+                <Logout />
             </ul>
         </div>
     </nav>
