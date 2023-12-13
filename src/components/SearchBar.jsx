@@ -33,6 +33,7 @@ const SearchBar = ({onCitySelect}) => {
             if (data) {
                 const uniqueCities = data.map((city) => ({
                     id: city.city_id, // Assuming city_id is available
+                    cityName: city.city_name,
                     name: `${city.city_name}, ${city.States.abbreviation}`,
                     ...city,
                 }));
@@ -61,7 +62,7 @@ const SearchBar = ({onCitySelect}) => {
     const handleOnSelect = (item) => {
         setInput(item.name);
         getWeatherData(item.latitude, item.longitude);
-        onCitySelect(item.name);
+        onCitySelect(item.cityName);
     }
 
     const getWeatherData = async (lat, lng) => {
