@@ -4,7 +4,7 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import WeatherPanel from "./WeatherPanel";
 import '../styles/SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = ({onCitySelect}) => {
     const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
     const [listOfCities, setListOfCities] = useState([]);
@@ -33,6 +33,7 @@ const SearchBar = () => {
             if (data) {
                 const uniqueCities = data.map((city) => ({
                     id: city.city_id, // Assuming city_id is available
+                    cityName: city.city_name,
                     name: `${city.city_name}, ${city.States.abbreviation}`,
                     ...city,
                 }));
@@ -45,7 +46,7 @@ const SearchBar = () => {
         fetchCities();
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [onCitySelect]);
 
     // Console.log the search item and all results
     const handleOnSearch = (string, results) => {
@@ -59,8 +60,9 @@ const SearchBar = () => {
 
     // Console.log the item selected from the list
     const handleOnSelect = (item) => {
-        setInput(item.city_name);
+        setInput(item.name);
         getWeatherData(item.latitude, item.longitude);
+        onCitySelect(item.cityName);
     }
 
     const getWeatherData = async (lat, lng) => {
