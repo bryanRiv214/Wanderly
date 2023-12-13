@@ -2,19 +2,16 @@ import React, {useEffect, useState} from 'react';
 import '../styles/ProfilePage.css';
 import CreatePostForm from '../components/CreatePostForm';
 import supabase from "../config/supabaseClient.js"
+import Logout from "../components/Logout.jsx";
+
 // Here ill pull the supabase data details
 // then using a component i will show the cards mapped with the data
 // We can either reuse the provided component or make a new one, for now ill wait
 
-
 import MyPostsCard from '../components/MyPostsCard.jsx'
 import MyPostsTable from '../components/MyPostsTable.jsx';
 
-
 const ProfilePage = () => {
-   
-    
-   
     const[tab, setTab] = useState('Create Post');
 
     const handleTabClick = (e) => {
@@ -25,7 +22,7 @@ const ProfilePage = () => {
         <div className='page'>
             <div className='container'>
             <div className='row'>
-                <div className='col-4 left-pane'>
+                <div className='col-sm-12 col-md-4 left-pane'>
                     <div className='image-container'>
                         <img className='profile-pic' src='profileicon.svg' alt='profile logo'></img> 
                     </div>
@@ -33,7 +30,7 @@ const ProfilePage = () => {
                     <button className='button' onClick={handleTabClick}>Create Post</button>
                     <button className='button' onClick={handleTabClick}>My Posts</button>
                     <button className='button' onClick={handleTabClick}>Settings</button>
-                    <button className='button' onClick={handleTabClick}>Logout</button>
+                    <Logout className="profile-page-logout"/>
                 </div>
                 <div className='col-8'>
                     <div className='right-pane'>
@@ -49,7 +46,6 @@ const ProfilePage = () => {
                                                 
                                                  </div>} 
                             {tab==='Settings' && <div>Settings Content will go here.</div>}
-                            {tab==='Logout' && <div>Logout will go here</div>}
                         </div>   
                     </div>  
                 </div>
