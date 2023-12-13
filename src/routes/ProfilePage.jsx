@@ -2,10 +2,11 @@ import React, {useEffect, useState} from 'react';
 import '../styles/ProfilePage.css';
 import CreatePostForm from '../components/CreatePostForm';
 import supabase from "../config/supabaseClient.js"
+import Logout from "../components/Logout.jsx";
+
 // Here ill pull the supabase data details
 // then using a component i will show the cards mapped with the data
 // We can either reuse the provided component or make a new one, for now ill wait
-
 
 import MyPostsCard from '../components/MyPostsCard.jsx'
 import MyPostsTable from '../components/MyPostsTable.jsx';

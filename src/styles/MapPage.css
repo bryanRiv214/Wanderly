@@ -16,3 +16,34 @@
   margin-top: 30px;
   margin-bottom: 42px;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .google-maps {
+    width: 95%;
+    height: 60vh;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .google-maps {
+    width: 85%;
+    height: 60vh;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .google-maps {
+    width: 70%;
+    height: 60vh;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .google-maps {
+    width: 65%;
+  }
+}
