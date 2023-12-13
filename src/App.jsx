@@ -21,6 +21,7 @@ const App = () => {
         if(sessionStorage.getItem('token')) {
             let data = JSON.parse(sessionStorage.getItem('token'))
             setToken(data)
+            console.log(data);
         }
     }, [])
 
@@ -30,8 +31,8 @@ const App = () => {
                 <div>
                 <Header />
                 <Routes>  
-                    <Route path="homepage" element={<HomePage userName="Bryan" location="New York City" setToken={setToken}/>} />
-                    <Route path="profile" element={<ProfilePage/>} />
+                    <Route path="homepage" element={<HomePage userName={token.user.user_metadata.firstname} location={token.user.user_metadata.location} setToken={setToken}/>} />
+                    <Route path="profile" element={<ProfilePage firstName={token.user.user_metadata.firstname} lastName ={token.user.user_metadata.lastname}/>} />
                     <Route path = "map" element = {<Map/>}/>
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
