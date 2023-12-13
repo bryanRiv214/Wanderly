@@ -1,10 +1,12 @@
 .PageNotFound {
-    height: 72vh;
+    background-color: #fffffe;
+    height: auto;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2vh 0;
 }
 
 .error-404-image {
@@ -12,19 +14,21 @@
 }
 
 .back-to-homepage-btn {
-    width: 15vw;
-    height: 5vh;
-    border-radius: 20px;
-    border: 1px solid black;
-    background-color: white;
-    cursor: pointer;
-}
-
+    background: #90b4ce;
+    border: 2px solid #094067;
+    color: #fffffe;
+    border-radius: 10px;
+    padding: 0.5vh;
+    transition: 0.2s;
+  }
+  
 .back-to-homepage-btn:hover {
-    transform: scale(1.1);
-}
+    transform: scale(105%);
+    background-color: #ef4565;
+  }
   
 .back-to-homepage-btn:active {
-    transform: scale(1);
-    background-color: rgb(234, 236, 239);
-}
+    transform: translateX(-2px);
+    box-shadow: 0px 1px 0px;
+  }
+

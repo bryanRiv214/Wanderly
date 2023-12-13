@@ -6,14 +6,13 @@ import { Link } from "react-router-dom";
 const PageNotFound = () => {
     return (
         <div className="PageNotFound">
-            <h1 className="error-404">404</h1>
             <h1>Oops...</h1>
-            <h2>This page doesn't exist.</h2>
+            <h2>You have wandered too far, we don't know what's beyond here...</h2>
 
             {/* Temporary image without transparent background - replace later */}
             <img alt='error 404 - page not found' className="error-404-image" src="error404.jpg"></img>
 
-            <Link to='/'><button className="back-to-homepage-btn">Back to Homepage</button></Link>
+            <Link to='/homepage'><button className="back-to-homepage-btn">Back to Homepage</button></Link>
         </div>
     )
 }

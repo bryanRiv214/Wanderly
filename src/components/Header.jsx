@@ -6,11 +6,12 @@ import Logout from "../components/Logout.jsx";
 const Header = () => {
     return (
         <nav className="Header">
-            <div className='website-title-container'>
+            <Link to="/homepage" className='website-title-container'>
             {/* This is just a placeholder for our logo. Replace with an image or SVG once we have the logo */}
-            <img className='logo' src='logo.png' alt="wanderly logo"></img>
+            <img className='logo' src='logo.svg' alt="wanderly logo"></img>
             <h2 className='wanderly-title'>Wanderly</h2>
-        </div>
+            
+        </Link>
 
         <div className="navbar-links-container">
             {/* Paste links to other pages when we are done creating them */}

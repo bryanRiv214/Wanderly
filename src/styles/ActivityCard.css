@@ -7,13 +7,14 @@
 .activity-content-container {
   position: relative;
   width: 100%;
-  background: gainsboro;
+  background: #fffffe;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   border-radius: 20px;
   text-align: center;
   padding: 2vh;
+  border: 2px solid #094067;
 }
 
 .activity-info-container {
@@ -25,12 +26,17 @@
   height: auto;
 }
 
+.activity-card-title {
+  color: #094067;
+}
+
 .activity-tags-container {
   display: flex;
   flex-direction: row;
   place-content: space-evenly;
   height: fit-content;
   height: auto;
+  color: #5f6c7b;
 }
 
 .activity-card-img {
@@ -51,6 +57,7 @@
   height: 18vh;
   place-self: center;
   justify-content: space-between;
+  color: #5f6c7b;
 }
 
 .open-post-btn {
@@ -68,19 +75,24 @@
 
 .activity-card-likes-btn {
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid #094067;
+  background-color: #90b4ce;
+  color: #fffffe;
   border-radius: 10px;
   box-shadow: 0px 3px 0px;
   width: auto;
+  transition: 0.3s;
+  padding: 0.5vh;
 }
 
 .activity-card-likes-btn:hover {
   transform: scale(105%);
+  background-color: #ef4565;
 }
 
 .activity-card-likes-btn:active {
   transform: translateX(-2px);
-  box-shadow: 0px 1px 0px;
+  box-shadow: 0px 1px 0px #094067;
 }
 
 /* Extra small devices (phones, 600px and down) */
