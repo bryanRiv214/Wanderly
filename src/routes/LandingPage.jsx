@@ -22,6 +22,10 @@ const LandingPage = ({setToken}) => {
 
     return (
         <div className="LandingPage">
+            <div className='wanderly'>
+                <img className='logo' src='logo.svg' alt="wanderly logo"></img>
+                <h2 className='wanderly-title'>Wanderly</h2>
+            </div>
             <div className="box">
                 <div className="formType">{formType}</div>
                 {formType === "Login" ?

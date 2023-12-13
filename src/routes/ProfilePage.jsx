@@ -21,7 +21,7 @@ const ProfilePage = ({firstName, lastName}) => {
                     <button className="button" onClick={handleTabClick}>Create Post</button>
                     <button className="button" onClick={handleTabClick}>My Posts</button>
                     <button className="button settings" onClick={handleTabClick}>Settings</button>
-                    <Logout className="profile-page-logout"/>
+                    <Logout />
                 </div>
                 <div className="right-pane col-8">
                     <h1 className="profile-name hidden-small-screen">{firstName} {lastName}</h1>
