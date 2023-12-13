@@ -1,6 +1,5 @@
 .ActivityCard {
   position: relative;
-  width: 60%;
   margin: auto;
   margin-bottom: 3vh;
 }
@@ -82,4 +81,56 @@
 .activity-card-likes-btn:active {
   transform: translateX(-2px);
   box-shadow: 0px 1px 0px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .ActivityCard {
+    width: 95%;
+  }
+
+  .activity-tags-container {
+    font-size: 0.8em;
+  }
+  
+  .activity-card-img {
+    width: 15vh;
+  }
+
+  .activity-card-title {
+    font-size: 1.4em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .ActivityCard {
+    width: 90%;
+  }
+
+  .activity-card-title {
+    font-size: 1.4em;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .ActivityCard {
+    width: 70%;
+  }
+
+  .activity-card-title {
+    font-size: 1.5em;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .ActivityCard {
+    width: 60%;
+  }
+
+  .activity-card-title {
+    font-size: 1.6em;
+  }
 }
