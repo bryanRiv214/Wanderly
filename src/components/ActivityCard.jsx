@@ -1,15 +1,41 @@
 import { useEffect, useState } from "react";
 import "../styles/ActivityCard.css";
 import { Link } from "react-router-dom";
+import supabase from "../config/supabaseClient";
+
 
 const ActivityCard = ({post}) => {
     const [activity, setActivity] = useState(post);
+    const [likes, setLikes] = useState(post.likes);
     useEffect(() => {
         if (!post) {
             setActivity(post);
         }
+        setLikes(post.likes);
     }, [post]);
     
+
+    // In this component we can make a like feature, that will take the current likes, display them and update them if you click on the button
+    const handleLikeClick = async (likes) => {
+        setLikes((prevLikes) => prevLikes + 1);
+        const { data, error } = await supabase
+    .from('Posts')
+    .update({ likes: likes + 1 })
+    .eq('post_id', post.post_id); // Assuming 'post_id' is the primary key
+
+  if (data) {
+    console.log(data);
+    // Optionally, update the local state with the updated data from the server
+    // setLikes(data[0].likes);
+  }
+
+  if (error) {
+    console.error(error);
+    // Handle error (notify the user, rollback the local state, etc.)
+  }
+};
+
+
     return (
         <div className="ActivityCard">
             {post? 
@@ -45,7 +71,7 @@ const ActivityCard = ({post}) => {
                             </button>
                         </Link>
 
-                        <button className="activity-card-likes-btn">Likes ##</button>
+                        <button className="activity-card-likes-btn">Likes {likes}</button>
                     </div>
                 </div>
             : ""}

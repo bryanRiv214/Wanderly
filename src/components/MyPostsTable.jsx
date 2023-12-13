@@ -9,10 +9,11 @@ const MyPostsTable = () => {
     const [fetchError, setFetchError] = useState(null);
     // Get ALL activities for now - CHANGE BASED ON SEARCH
     const [posts, setPosts] = useState([])
-    const userId = '3' // for now only using my user ID but eventually it will be the sessions userId
+    //const userId = 'f47cf9b1-0f92-40fa-a77a-fbbe1a3637dc' // for now only using my user ID but eventually it will be the sessions userId
 
 
     useEffect(() => {
+        let uuid = JSON.parse(sessionStorage.getItem('token')).user.id;
         const fetchUsersPosts = async () => {
             const { data, error } = await supabase
                 .from('Posts') // check
@@ -29,7 +30,7 @@ const MyPostsTable = () => {
                 price,
                 likes
             `)
-            .eq('user_id', userId)
+            .eq('user_id', uuid)
 
                 
                 if (error) {
