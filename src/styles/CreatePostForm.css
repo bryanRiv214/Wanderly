@@ -30,6 +30,7 @@ label {
 .input, .textArea, .select
             {
     margin-left: 10px;
+    padding: 5px 10px 5px 10px;
 }
 
 .TitleSection input, textarea
@@ -39,7 +40,7 @@ label {
 
 .PriceSection input {
     margin-left: 3px;
-    width: 40px;
+    width: 50px;
 }
 
 textarea {

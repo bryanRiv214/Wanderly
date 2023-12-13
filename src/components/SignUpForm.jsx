@@ -44,6 +44,7 @@ function SignUpForm() {
           )
           if(error) {
             console.log(error)
+            alert(error)
           }
           else if(data) {
             // create a new row in users table

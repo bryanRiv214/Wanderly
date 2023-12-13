@@ -35,7 +35,6 @@ function LoginForm({setToken}) {
           }
           else if(data) {
             console.log(data)
-            alert("Logged in")
             setToken(data)
             navigate('../homepage')
           }
