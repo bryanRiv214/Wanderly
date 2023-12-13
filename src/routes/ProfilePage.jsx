@@ -19,37 +19,34 @@ const ProfilePage = () => {
     }
 
     return (
-        <div className='page'>
-            <div className='container'>
+        <div className='page container-fluid'>
             <div className='row'>
-                <div className='col-sm-12 col-md-4 left-pane'>
-                    <div className='image-container'>
-                        <img className='profile-pic' src='profileicon.svg' alt='profile logo'></img> 
-                    </div>
+                <div className='col-md-4 left-pane'>
+                    <img className='profile-pic' src='profileicon.svg' alt='profile logo'></img>
+
+                    <h1 className='profile-name hidden-large-screen'>Bryan Rivera</h1>
+
                     <button className='button' onClick={handleTabClick}>Edit Profile</button>
                     <button className='button' onClick={handleTabClick}>Create Post</button>
                     <button className='button' onClick={handleTabClick}>My Posts</button>
-                    <button className='button' onClick={handleTabClick}>Settings</button>
+                    <button className='button settings' onClick={handleTabClick}>Settings</button>
                     <Logout className="profile-page-logout"/>
                 </div>
-                <div className='col-8'>
-                    <div className='right-pane'>
-                        <div className='profile-name'>
-                            Bryan Rivera
-                        </div>
-                        <div>
-                            {tab==='Edit Profile' && <div>Edit Profile Content will go here.</div>}
-                            {tab==='Create Post' && <CreatePostForm/>}
-                            {tab==='My Posts' && <div className="user-posts"> 
+
+                <div className='right-pane col-8'>
+                    <h1 className='profile-name hidden-small-screen'>Bryan Rivera</h1>
+
+                    <div className="tab-container">
+                        {tab==='Edit Profile' && <div>Edit Profile Content will go here.</div>}
+                        {tab==='Create Post' && <CreatePostForm />}
+                        {tab==='My Posts' && <div className="user-posts"> 
                                                     
-                                                    <MyPostsTable/> 
+                                            <MyPostsTable/> 
                                                 
-                                                 </div>} 
-                            {tab==='Settings' && <div>Settings Content will go here.</div>}
-                        </div>   
-                    </div>  
+                                        </div>} 
+                        {tab==='Settings' && <div>Settings Content will go here.</div>}
+                    </div> 
                 </div>
-            </div>
             </div>
         </div>
     );

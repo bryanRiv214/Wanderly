@@ -3,21 +3,21 @@
 }
 
 .left-pane {
-    padding: 50px 50px 50px 50px;
     display: flex;
     flex-direction: column;
 }
 
-.image-container {
+/* .image-container {
     width: 300px;
     height: 200px;
     text-align: center;
     margin-bottom: 30px;
+    background-color: antiquewhite;
 }
 
 .image-container img {
     height: 200px;
-}
+} */
 
 .button {
     background-color: #FBF4EA;
@@ -28,13 +28,131 @@
 }
 
 .right-pane {
-    padding: 50px 50px 50px 50px;
     display: flex;
     flex-direction: column;
 }
 
-.profile-name {
-    font-size: xxx-large;
-    padding: 50px 0px 50px 0px;
-    font-weight: bold;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .profile-pic {
+        position: relative;
+        height: 25vh;
+        left: 2vw;
+    }
+
+    .profile-name.hidden-small-screen {
+        display: none;
+    }
+
+    .profile-name {
+        font-size: 2.5em;
+        padding: 30px 0px 20px 0px;
+        font-weight: bold;
+        width: 100vw;
+        text-align: center;
+        border-bottom: 1px solid gray;
+    }
+
+    .settings {
+        margin-bottom: 2vh;
+    }
+
+    .left-pane {
+        padding: 3vw 3vw 5vw 3vw;
+        place-items: center;
+    }
+
+    .right-pane {
+        padding: 0px 3vw;
+        margin-bottom: 3vw;
+        width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .profile-pic {
+        position: relative;
+        height: 25vh;
+        left: 2vw;
+    }
+
+    .profile-name.hidden-small-screen {
+        display: none;
+    }
+
+    .profile-name {
+        font-size: 2.5em;
+        padding: 30px 0px 20px 0px;
+        font-weight: bold;
+        width: 100vw;
+        text-align: center;
+        border-bottom: 1px solid gray;
+    }
+
+    .settings {
+        margin-bottom: 2vh;
+    }
+
+    .left-pane {
+        padding: 3vw 3vw 5vw 3vw;
+        place-items: center;
+    }
+
+    .right-pane {
+        padding: 0px 3vw;
+        margin-bottom: 3vw;
+        width: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .profile-pic {
+        position: relative;
+        height: 30vh;
+        left: 2vw;
+        margin-bottom: 3vh;
+    }
+
+    .profile-name.hidden-large-screen {
+        display: none;
+    }
+
+    .profile-name.hidden-small-screen {
+        display: inherit;
+    }
+
+    .profile-name {
+        font-size: xxx-large;
+        font-weight: bold;
+        border: none;
+        width: fit-content;
+    }
+
+    .settings {
+        margin-bottom: 1.5vh;
+    }
+
+    .left-pane {
+        padding: 3vw 3vw 5vw 3vw;
+        place-items: center;
+        width: 30%;
+    }
+
+    .right-pane {
+        position: relative;
+        margin-top: 8vh;
+        margin-bottom: 3vw;
+        width: 70%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .right-pane {
+        padding: 0px 3vw;
+        margin-bottom: 3vw;
+        width: 70%;
+    }
 }
