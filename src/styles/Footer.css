@@ -1,6 +1,6 @@
 /* Style Footer */
 .Footer {
-  background-color: rgb(172, 178, 152);
+  background-color: #90b4ce;
   height: auto;
   min-height: 18vh;
   padding: 2vh;
@@ -17,10 +17,12 @@
 
 .slogan {
   width: fit-content;
+  color: #094067;
 }
 
 .wanderly-beige {
-  color: rgb(250, 240, 228);
+  /* color: #ef4565; */
+  color: white;
 }
 
 .social-media-icons-container {
@@ -38,6 +40,7 @@
 .website-info-container {
   display: flex;
   text-align: center;
+  color: #094067;
 }
 
 .terms-and-privacy-container p{

@@ -6,12 +6,12 @@
     margin-top: 2vh;
     margin-bottom: 5vh;
     padding: 3vh;
-    border: 0.3vw solid #3d3c3e;
+    border: 4px solid #094067;
     border-radius: 50px;
-    color: #5b585e;
+    color: #094067;
     width: 60vw;
     height: auto;
-    background-color: #d8d9d8;
+    background-color: #90b4ce;
     cursor: pointer;
 }
 

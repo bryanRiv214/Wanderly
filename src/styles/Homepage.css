@@ -4,12 +4,13 @@
 }
 
 .Homepage {
-  background-color: rgb(250, 240, 228);
+  background-color: #fffffe;
   width: 100vw;
   min-height: 70vh;
   display: flex;
   flex-direction: column;
   place-items: center;
+  color: #094067;
 }
 
 .location-info-container {

@@ -71,7 +71,7 @@ const ActivityCard = ({post}) => {
                             </button>
                         </Link>
 
-                        <button className="activity-card-likes-btn">Likes {likes}</button>
+                        <button className="activity-card-likes-btn">{likes} likes</button>
                     </div>
                 </div>
             : ""}

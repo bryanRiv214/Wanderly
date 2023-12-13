@@ -1,5 +1,5 @@
 .page {
-    background-color: #FBF4EA;
+    background-color: #fffffe;
 }
 
 .left-pane {
@@ -7,29 +7,22 @@
     flex-direction: column;
 }
 
-/* .image-container {
-    width: 300px;
-    height: 200px;
-    text-align: center;
-    margin-bottom: 30px;
-    background-color: antiquewhite;
-}
-
-.image-container img {
-    height: 200px;
-} */
-
 .button {
-    background-color: #FBF4EA;
+    background-color: #fffffe;
     padding: 10px 0px 10px 0px;
     text-align: left;
     font-size: large;
-    
+    color: #094067;
 }
 
 .right-pane {
     display: flex;
     flex-direction: column;
+    color: #094067;
+}
+
+.tab-container div p {
+    color: #5f6c7b !important;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -50,6 +43,7 @@
         font-weight: bold;
         width: 100vw;
         text-align: center;
+        color: #094067;
         border-bottom: 1px solid gray;
     }
 
@@ -103,6 +97,7 @@
         padding: 0px 3vw;
         margin-bottom: 3vw;
         width: 100%;
+        color: #094067;
     }
 }
 
