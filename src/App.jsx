@@ -25,13 +25,15 @@ const App = () => {
         }
     }, [])
 
+    console.log(token)
+
     return (
         <div>
             {token ?
                 <div>
                 <Header />
                 <Routes>  
-                    <Route path="homepage" element={<HomePage userName={token.user.user_metadata.firstname} location={token.user.user_metadata.location} setToken={setToken}/>} />
+                    <Route path="homepage" element={<HomePage userName={token.user.user_metadata.username}/>} />
                     <Route path="profile" element={<ProfilePage firstName={token.user.user_metadata.firstname} lastName ={token.user.user_metadata.lastname}/>} />
                     <Route path = "map" element = {<Map/>}/>
                     <Route path="*" element={<PageNotFound />} />
