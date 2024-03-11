@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import ActivitiesTable from "../components/ActivitiesTable";
+import SortDropdown from '../components/SortDropdown';
 import SearchBar from "../components/SearchBar";
 import "../styles/Homepage.css";
 
@@ -23,6 +24,8 @@ const HomePage = ({userName, location}) => {
       <SearchBar onCitySelect={handleCitySelect}/>
 
       <h2>What can you do today?</h2>
+
+      <SortDropdown/>
       
       {/* Searchbar has a callback function to record city name */}
       <ActivitiesTable selectedCity={city}/>
