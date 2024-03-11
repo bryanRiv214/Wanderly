@@ -43,6 +43,7 @@ const App = () => {
             :
                 <Routes>
                     <Route index element={<LandingPage setToken={setToken}/>}></Route>
+                    <Route path="homepage" element={<HomePage userName='Guest'/>} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             }
