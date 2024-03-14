@@ -1,6 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ActivitiesTable from "../components/ActivitiesTable";
 import SortDropdown from '../components/SortDropdown';
 import SearchBar from "../components/SearchBar";
@@ -11,8 +10,6 @@ import "../styles/Homepage.css";
 const HomePage = ({userName}) => {
   const [city, setCity] = useState();
   const [sortOrder, setSortOrder] = useState('Popular');
-
-  console.log(sortOrder);
 
   // function to record city selected
   const handleCitySelect = (city) => {
