@@ -4,7 +4,6 @@ import supabase from "../config/supabaseClient.js";
 import { useState, useEffect } from "react";
 
 function sortActivities(activities, setActivities, sortOrder) {
-    console.log('here')
     // Clone the activities array to avoid mutating the original state
     const sortedActivities = [...activities];
     // using insertion sort
