@@ -3,65 +3,69 @@ import "../styles/ActivitiesTable.css";
 import supabase from "../config/supabaseClient.js";
 import { useState, useEffect } from "react";
 
+function sortActivities(activities, setActivities, sortOrder) {
+    console.log('here')
+    // Clone the activities array to avoid mutating the original state
+    const sortedActivities = [...activities];
+    // using insertion sort
+    if(sortOrder === 'Popular') {
+        for(let x = 1; x < sortedActivities.length; x++) {
+            let act = sortedActivities[x];
+            let i = x - 1;
+            while(i >= 0 && act.likes > sortedActivities[i].likes) {
+                sortedActivities[i+1] = sortedActivities[i];
+                i--;
+            }
+            sortedActivities[i+1] = act;
+        }
+    }
+    else if(sortOrder === 'Price') {
+        for(let x = 1; x < sortedActivities.length; x++) {
+            let act = sortedActivities[x];
+            let i = x - 1;
+            while(i >= 0 && act.price < sortedActivities[i].price) {
+                sortedActivities[i+1] = sortedActivities[i];
+                i--;
+            }
+            sortedActivities[i+1] = act;
+        }
+    }
+    else if(sortOrder === 'Alphabetical') {
+        for(let x = 1; x < sortedActivities.length; x++) {
+            let act = sortedActivities[x];
+            let i = x - 1;
+            while(i >= 0 && act.title < sortedActivities[i].title) {
+                sortedActivities[i+1] = sortedActivities[i];
+                i--;
+            }
+            sortedActivities[i+1] = act;
+        }
+    }
+    else if(sortOrder === 'Newest') {
+        for(let x = 1; x < sortedActivities.length; x++) {
+            let act = sortedActivities[x];
+            let i = x - 1;
+            while(i >= 0 && act.created_at < sortedActivities[i].created_at) {
+                sortedActivities[i+1] = sortedActivities[i];
+                i--;
+            }
+            sortedActivities[i+1] = act;
+        }
+    }
+    // Update the state with the sorted activities
+    setActivities(sortedActivities);
+}
+
+
+
 const ActivitiesTable = ({selectedCity, sortOrder}) => {
     const [fetchError, setFetchError] = useState(null);
     const [activities, setActivities] = useState([]);
 
     useEffect(() => {
         // Order activies based on chosen sort order
-        const sortActivities = () => {
-            // Clone the activities array to avoid mutating the original state
-            const sortedActivities = [...activities];
-            // using insertion sort
-            if(sortOrder === 'Popular') {
-                for(let x = 1; x < sortedActivities.length; x++) {
-                    let act = sortedActivities[x];
-                    let i = x - 1;
-                    while(i >= 0 && act.likes > sortedActivities[i].likes) {
-                        sortedActivities[i+1] = sortedActivities[i];
-                        i--;
-                    }
-                    sortedActivities[i+1] = act;
-                }
-            }
-            else if(sortOrder === 'Price') {
-                for(let x = 1; x < sortedActivities.length; x++) {
-                    let act = sortedActivities[x];
-                    let i = x - 1;
-                    while(i >= 0 && act.price < sortedActivities[i].price) {
-                        sortedActivities[i+1] = sortedActivities[i];
-                        i--;
-                    }
-                    sortedActivities[i+1] = act;
-                }
-            }
-            else if(sortOrder === 'Alphabetical') {
-                for(let x = 1; x < sortedActivities.length; x++) {
-                    let act = sortedActivities[x];
-                    let i = x - 1;
-                    while(i >= 0 && act.title < sortedActivities[i].title) {
-                        sortedActivities[i+1] = sortedActivities[i];
-                        i--;
-                    }
-                    sortedActivities[i+1] = act;
-                }
-            }
-            else if(sortOrder === 'Newest') {
-                for(let x = 1; x < sortedActivities.length; x++) {
-                    let act = sortedActivities[x];
-                    let i = x - 1;
-                    while(i >= 0 && act.created_at < sortedActivities[i].created_at) {
-                        sortedActivities[i+1] = sortedActivities[i];
-                        i--;
-                    }
-                    sortedActivities[i+1] = act;
-                }
-            }
-            // Update the state with the sorted activities
-            setActivities(sortedActivities);
-        }
-        sortActivities();
-    }, [sortOrder]);
+        sortActivities(activities, setActivities, sortOrder);
+    }, [activities, sortOrder]);
 
     useEffect(() => {
         // Get activies based on search
@@ -104,13 +108,14 @@ const ActivitiesTable = ({selectedCity, sortOrder}) => {
             }
 
             if (data) {
-                setActivities(data);
+                // setActivities(data);
+                sortActivities(data, setActivities, sortOrder);
                 setFetchError(null);
             }
         }
 
         fetchActivities();
-    }, [selectedCity])
+    }, [selectedCity]) // I left activities out of the dependencies because I dont think we need this effect to execute if sortOrder changes
 
     return (
         <div className="ActivitiesContainer">
