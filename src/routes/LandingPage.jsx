@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 import '../styles/LandingPage.css'
 import Login from "../components/LoginForm"
 import SignUp from "../components/SignUpForm"
+import { useNavigate } from 'react-router-dom'
 
 // Starting page
 
 const LandingPage = ({setToken}) => {
+
+    const navigate = useNavigate()
 
     const[formType, setFormType] = useState('Login')
     const[otherFormType, setOtherFormType] = useState('Signup')
@@ -18,6 +21,10 @@ const LandingPage = ({setToken}) => {
             setFormType('Login')
             setOtherFormType('Signup')
         }
+    }
+
+    function handleGuest() {
+        navigate('../homepage')
     }
 
     return (
@@ -45,7 +52,9 @@ const LandingPage = ({setToken}) => {
                         </div>
                     </div>
                 }
-                
+                <div className="guest-message">
+                    <span style={{ color: 'blue', cursor: 'pointer' }} onClick={handleGuest}>Join as Guest</span>
+                </div>
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ import "../styles/Homepage.css";
 
 // Starting page
 
-const HomePage = ({userName, location}) => {
+const HomePage = ({userName}) => {
   const [city, setCity] = useState();
 
   // function to record city selected
