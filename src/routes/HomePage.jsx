@@ -1,7 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ActivitiesTable from "../components/ActivitiesTable";
+import SortDropdown from '../components/SortDropdown';
 import SearchBar from "../components/SearchBar";
 import "../styles/Homepage.css";
 
@@ -9,6 +9,7 @@ import "../styles/Homepage.css";
 
 const HomePage = ({userName}) => {
   const [city, setCity] = useState();
+  const [sortOrder, setSortOrder] = useState('Popular');
 
   // function to record city selected
   const handleCitySelect = (city) => {
@@ -23,9 +24,11 @@ const HomePage = ({userName}) => {
       <SearchBar onCitySelect={handleCitySelect}/>
 
       <h2>What can you do today?</h2>
+
+      <SortDropdown sortOrder={sortOrder} setSortOrder={setSortOrder}/>
       
       {/* Searchbar has a callback function to record city name */}
-      <ActivitiesTable selectedCity={city}/>
+      <ActivitiesTable selectedCity={city} sortOrder={sortOrder}/>
 
       {/* Replace with a better image. This image was taken from FontAwesome.com */}
       <img className='arrow-down-img' src='arrow-down-solid.svg' alt=''></img>
