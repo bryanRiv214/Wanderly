@@ -64,7 +64,7 @@ const ActivitiesTable = ({selectedCity, sortOrder}) => {
     useEffect(() => {
         // Order activies based on chosen sort order
         sortActivities(activities, setActivities, sortOrder);
-    }, [activities, sortOrder]);
+    }, [sortOrder]);
 
     useEffect(() => {
         // Get activies based on search
