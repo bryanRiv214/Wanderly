@@ -65,7 +65,7 @@ const ActivityCard = ({post}) => {
                     </div>
 
                     <div className="activity-card-btns">
-                        <Link to={`/${post.post_id}`}>
+                        <Link className='link-item' to={`/homepage/${post.post_id}`}>
                             <button className="open-post-btn">
                                 <img className="arrow-right-image" src="/arrow-right.svg" alt="arrow to the right"></img>
                             </button>
