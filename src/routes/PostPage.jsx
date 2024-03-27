@@ -1,4 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
+import "../styles/PostPage.css";
 import { useParams } from "react-router-dom";
 import supabase from "../config/supabaseClient";
 
@@ -8,7 +9,6 @@ const PostPage = () => {
 
     useEffect(() => {
         const getPostInfo = async () => {
-            console.log(parseInt(params.id)); //
             const {data} = await supabase
             .from("Posts")
             .select(`
@@ -24,9 +24,7 @@ const PostPage = () => {
             price, 
             likes
             `)
-            .eq('post_id', 22);
-
-            console.log(data); //
+            .eq('post_id', parseInt(params.id));
 
             setDetails({
                 "title": data[0].title, 
@@ -43,13 +41,17 @@ const PostPage = () => {
     console.log(postDetails)
 
     return(
-        <div className="complete-activity-card">
-            <div className="activity-info-container">
-                {/* <h2 className="activity-card-title">{postDetails.title}</h2> */}
+        <div className="PostPage">
+             {postDetails != null? 
+             <div className="complete-post-page">
+                <div className="post-page-container">
+                    <h2 className="activity-card-title">{postDetails.title}</h2>
+                    <h4 className="activity-card-description">{postDetails.description}</h4>
+                    <img className="post-page-img" alt="Activity thumbnail" src="https://res.cloudinary.com/the-infatuation/image/upload/c_fill,w_828,ar_4:3,g_center,f_auto/cms/media/reviews/katzs-deli/banners/Theophilus-_252B-Katzs-019_0"></img>
+                </div>
             </div>
-            <div className="activity-content-container">
-                <img className="activity-card-img" alt="Activity thumbnail" src="https://res.cloudinary.com/the-infatuation/image/upload/c_fill,w_828,ar_4:3,g_center,f_auto/cms/media/reviews/katzs-deli/banners/Theophilus-_252B-Katzs-019_0"></img>
-            </div>
+            
+            :''}
         </div>
     )
 }
