@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Header from './components/Header';
 import HomePage from './routes/HomePage'
+import PostPage from './routes/PostPage'
 import PageNotFound from './routes/PageNotFound';
 import ProfilePage from './routes/ProfilePage';
 import Footer from './components/Footer';
@@ -21,7 +22,6 @@ const App = () => {
         if(sessionStorage.getItem('token')) {
             let data = JSON.parse(sessionStorage.getItem('token'))
             setToken(data)
-            console.log(data);
         }
     }, [])
 
@@ -34,6 +34,7 @@ const App = () => {
                 <Header />
                 <Routes>  
                     <Route path="homepage" element={<HomePage userName={token.user.user_metadata.username}/>} />
+                    <Route path="homepage/:id" element={<PostPage/>} />
                     <Route path="profile" element={<ProfilePage firstName={token.user.user_metadata.firstname} lastName ={token.user.user_metadata.lastname}/>} />
                     <Route path = "map" element = {<Map/>}/>
                     <Route path="*" element={<PageNotFound />} />

@@ -1,0 +1,152 @@
+.PostPage {
+  position: relative;
+  margin: auto;
+  margin: 10vw;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+}
+
+.complete-post-page{
+  position: relative;
+  width: 100%;
+  background: #fffffe;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  text-align: center;
+  padding: 2vw;
+  border: 2px solid #094067;
+}
+
+.post-page-container {
+  position: relative;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-content: space-evenly;
+  justify-content: center;
+  height: auto;
+}
+
+.post-page-title {
+  color: #094067;
+}
+
+/* .activity-tags-container {
+  display: flex;
+  flex-direction: row;
+  place-content: space-evenly;
+  height: fit-content;
+  height: auto;
+  color: #5f6c7b;
+} */
+
+.post-page-img {
+  width: 40%;
+  margin: 5px 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+}
+
+.activity-card-tags-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.activity-card-btns {
+  display: flex;
+  flex-direction: column;
+  height: 18vh;
+  place-self: center;
+  justify-content: space-between;
+  color: #5f6c7b;
+}
+
+.open-post-btn {
+  background: none;
+  cursor: pointer;
+}
+
+.open-post-btn:hover {
+  transform: scale(1.1);
+}
+
+.open-post-btn:active {
+  transform: scale(1);
+}
+
+.activity-card-likes-btn {
+  cursor: pointer;
+  border: 1px solid #094067;
+  background-color: #90b4ce;
+  color: #fffffe;
+  border-radius: 10px;
+  box-shadow: 0px 3px 0px;
+  width: auto;
+  transition: 0.3s;
+  padding: 0.5vh;
+}
+
+.activity-card-likes-btn:hover {
+  transform: scale(105%);
+  background-color: #ef4565;
+}
+
+.activity-card-likes-btn:active {
+  transform: translateX(-2px);
+  box-shadow: 0px 1px 0px #094067;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .ActivityCard {
+    width: 95%;
+  }
+
+  .activity-tags-container {
+    font-size: 0.8em;
+  }
+  
+  .activity-card-img {
+    width: 15vh;
+  }
+
+  .activity-card-title {
+    font-size: 1.4em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .ActivityCard {
+    width: 90%;
+  }
+
+  .activity-card-title {
+    font-size: 1.4em;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .ActivityCard {
+    width: 70%;
+  }
+
+  .activity-card-title {
+    font-size: 1.5em;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .ActivityCard {
+    width: 60%;
+  }
+
+  .activity-card-title {
+    font-size: 1.6em;
+  }
+}
